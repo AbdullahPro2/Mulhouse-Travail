@@ -7,7 +7,6 @@ import PostJob from './pages/PostJob';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import PostedApplications from './pages/PostedApplications';
-import Authentication from './pages/Authentication';
 import Login from './features/authentication/Login';
 import Signup from './features/authentication/Signup';
 function App() {
@@ -33,12 +32,12 @@ function App() {
         },
 
         {
-          path: '/Mulhouse-Travail/authentication/login',
-          element: <Authentication />,
+          path: '/Mulhouse-Travail/login',
+          element: <Login />,
         },
         {
-          path: '/Mulhouse-Travail/authentication/signup',
-          element: <Authentication />,
+          path: '/Mulhouse-Travail/signup',
+          element: <Signup />,
         },
 
         {
