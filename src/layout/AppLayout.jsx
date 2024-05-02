@@ -15,3 +15,10 @@ function AppLayout() {
 }
 
 export default AppLayout;
+// #1B4965
+// #FBFFFF
+// #FF9800
+
+// #004D40
+// #E0F2F1
+// #FF8120

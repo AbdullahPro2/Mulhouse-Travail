@@ -15,42 +15,42 @@ function App() {
       element: <AppLayout />,
       children: [
         {
-          path: '/Mulhouse-Travail/',
+          path: '/',
           element: <Home />,
         },
         {
-          path: '/Mulhouse-Travail/jobs',
+          path: '/jobs',
           element: <Jobs />,
         },
         {
-          path: '/Mulhouse-Travail/postjob',
+          path: '/postjob',
           element: <PostJob />,
         },
         {
-          path: '/Mulhouse-Travail/your-applications',
+          path: '/your-applications',
           element: <PostedApplications />,
         },
 
         {
-          path: '/Mulhouse-Travail/login',
+          path: '/login',
           element: <Login />,
         },
         {
-          path: '/Mulhouse-Travail/signup',
+          path: '/signup',
           element: <Signup />,
         },
 
         {
-          path: '/Mulhouse-Travail/settings',
+          path: '/settings',
           element: <Settings />,
         },
 
         {
-          path: '/Mulhouse-Travail/contact',
+          path: '/contact',
           element: <Contact />,
         },
         {
-          path: '/Mulhouse-Travail/about',
+          path: '/about',
           element: <About />,
         },
       ],

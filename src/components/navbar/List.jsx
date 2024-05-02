@@ -4,13 +4,13 @@ import ListItem from './ListItem';
 function List() {
   return (
     <ul>
-      <ListItem to="/Mulhouse-Travail/" list="DashBoard" />
-      <ListItem to="/Mulhouse-Travail/jobs" list="Discover Jobs" />
-      <ListItem to="/Mulhouse-Travail/postjob" list="Employer Portal" />
-      <ListItem to="/Mulhouse-Travail/your-applications" list="Applied Jobs" />
-      <ListItem to="/Mulhouse-Travail/settings" list="Settings" />
-      <ListItem to="/Mulhouse-Travail/contact" list="Contact us" />
-      <ListItem to="/Mulhouse-Travail/about" list="About us" />
+      <ListItem to="/" list="DashBoard" />
+      <ListItem to="/jobs" list="Discover Jobs" />
+      <ListItem to="/postjob" list="Employer Portal" />
+      <ListItem to="/your-applications" list="Applied Jobs" />
+      <ListItem to="/settings" list="Settings" />
+      <ListItem to="/contact" list="Contact us" />
+      <ListItem to="/about" list="About us" />
     </ul>
   );
 }
