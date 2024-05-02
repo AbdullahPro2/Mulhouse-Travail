@@ -5,7 +5,7 @@ import Navbar from '../components/navbar/Navbar';
 function AppLayout() {
   return (
     <>
-      <div>
+      <div className="min-h-screen">
         <Navbar />
         <Outlet />
       </div>
