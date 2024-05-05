@@ -1,19 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function ListItem({
-  to,
-  list,
-  icon,
-  isOpen,
-  delay,
-  setIsOpen = { setIsOpen },
-}) {
+function ListItem({ to, list, icon, isOpen, delay, setIsOpen, delayClose }) {
   return (
     <NavLink
       to={to}
-      className={`flex items-center gap-3  px-4 py-1 transition-transform duration-200 ease-in-out ${isOpen ? `translate-x-0` : ' -translate-x-full'} `}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={`flex items-center gap-3  px-4 py-2 transition-all duration-150 ease-in-out hover:bg-[#163631c2] lg:translate-x-0 ${isOpen ? `translate-x-0` : ' -translate-x-full'} `}
+      style={{
+        transitionDelay: `${isOpen ? `${delay}ms` : `${delayClose}ms`}`,
+      }}
       onClick={() => setIsOpen(false)}
     >
       <img
