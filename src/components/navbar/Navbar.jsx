@@ -9,7 +9,7 @@ function Navbar({ isOpen, setIsOpen }) {
       className={`relative  z-30 flex items-center justify-end p-4 lg:justify-center ${isOpen ? 'bg-black bg-opacity-40' : ''}`}
     >
       <div
-        className={` absolute transition-all duration-300 ${isOpen ? 'left-36 top-2 delay-100' : 'left-2'} z-50 h-12 lg:hidden`}
+        className={` absolute transition-all duration-300 ${isOpen ? 'left-36 top-2 delay-100' : 'left-2'} z-50 h-10 lg:hidden `}
       >
         <Hamburger
           toggled={isOpen}
