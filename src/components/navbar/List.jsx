@@ -27,7 +27,7 @@ function List({ isOpen, setIsOpen }) {
   }, [isOpen, setIsOpen, prevScrollPos]);
   return (
     <div className="w-full ">
-      <ul className="flex flex-col gap-10 ">
+      <ul className="flex flex-col gap-10  ">
         <ListItem
           to="/"
           list="DashBoard"

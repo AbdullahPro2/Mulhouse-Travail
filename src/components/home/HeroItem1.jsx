@@ -2,9 +2,9 @@ import React from 'react';
 import heroItemImg from '../../assets/heroSection/hero1Image.jpg';
 function HeroItem1() {
   return (
-    <div className="flex h-[40vh]">
-      <div className=" my-auto flex flex-col gap-2 pl-2 ">
-        <h1 className=" text-base uppercase tracking-[9%] text-white">
+    <div className="flex h-[40vh] justify-between bg-[#2E8B57] sm:h-[50vh] md:h-[60vh]">
+      <div className=" my-auto flex flex-col gap-2 pl-2 sm:max-w-[50%] sm:gap-3 sm:px-3 md:gap-4 lg:px-5 xl:gap-6 xl:px-8">
+        <h1 className=" text-base uppercase tracking-[9%] text-white xs:text-lg sm:text-xl lg:text-2xl xl:text-4xl">
           Lets find your
           <br />
           <span className="font-black tracking-[9%] text-[#FFB84F]">
@@ -12,20 +12,21 @@ function HeroItem1() {
           </span>
           together
         </h1>
-        <p className="text-xs text-white">
+        <p className="text-[10px] text-white xs:text-xs sm:text-base lg:text-lg xl:text-xl">
           Discover Opportunities, Connect with Employees, and take the next step
           towards a fulfilling work life
         </p>
-        <button className="mt-1  w-fit rounded-l-[90px]  bg-[#FFB84F] px-3 py-1  text-xs font-semibold">
+        <button className="mt-1  w-fit rounded-l-[90px]  bg-[#FFB84F]  px-2 py-[5px] text-sm font-semibold sm:text-lg lg:px-4 lg:py-3 lg:text-xl xl:px-5 xl:py-4 ">
           Explore Jobs
         </button>
       </div>
       <img
         src={heroItemImg}
-        className="my-auto h-[50%] w-[50%]  rounded-l-[90px] "
+        className="my-auto max-h-[70%]  max-w-[50%] rounded-l-full opacity-95 "
       />
     </div>
   );
 }
 
 export default HeroItem1;
+// my-auto h-[50%] w-[50%] rounded-l-[90px] opacity-95 sm:max-h-[50%] sm:max-w-[40%] md:max-h-[70%] lg:max-h-[75%] lg:max-w-[35%] xl:max-h-[80%] xl:max-w-[33%] xl:rounded-l-[200px]"
