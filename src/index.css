@@ -24,3 +24,17 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+.slick-next {
+  display: none !important;
+}
+.slick-arrow {
+  display: none !important;
+}
+.slick-active {
+  width: 10px;
+  height: 10px;
+  color: blue;
+  border-radius: 100%;
+  border: 2px #004d40 solid;
+  background-color: #004d40;
+}

@@ -21,7 +21,7 @@ function Navbar({ isOpen, setIsOpen }) {
       </div>
 
       <div
-        className={` absolute left-0 top-0 z-40 flex h-screen -translate-x-full flex-col justify-between overflow-auto  !bg-[#004D40] !bg-opacity-100 pt-20 text-[white] transition-all duration-150 ease-in-out lg:fixed lg:w-[200px] lg:translate-x-0 ${
+        className={` absolute left-0 top-0 z-40 flex h-screen -translate-x-full flex-col justify-between overflow-auto  !bg-[#004d40] !bg-opacity-100 pt-20 text-[white] transition-all duration-150 ease-in-out lg:fixed lg:w-[200px] lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : 'delay-[1200ms]'
         }`}
       >

@@ -20,7 +20,10 @@ function HeroItem3() {
           Let's go
         </button>
       </div>
-      <img src={heroItemImg} className="=0  my-auto h-[80%] w-[500px]" />
+      <img
+        src={heroItemImg}
+        className="my-auto max-h-[70%]  max-w-[50%] rounded-l-full opacity-95"
+      />
     </div>
   );
 }

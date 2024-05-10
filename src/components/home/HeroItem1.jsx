@@ -29,4 +29,3 @@ function HeroItem1() {
 }
 
 export default HeroItem1;
-// my-auto h-[50%] w-[50%] rounded-l-[90px] opacity-95 sm:max-h-[50%] sm:max-w-[40%] md:max-h-[70%] lg:max-h-[75%] lg:max-w-[35%] xl:max-h-[80%] xl:max-w-[33%] xl:rounded-l-[200px]"
