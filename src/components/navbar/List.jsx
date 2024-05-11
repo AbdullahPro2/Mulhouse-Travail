@@ -30,7 +30,7 @@ function List({ isOpen, setIsOpen }) {
       <ul className="flex flex-col gap-10  ">
         <ListItem
           to="/"
-          list="DashBoard"
+          list="Tableau de bord"
           icon={homeIcon}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -39,7 +39,7 @@ function List({ isOpen, setIsOpen }) {
         />
         <ListItem
           to="/jobs"
-          list="Discover Jobs"
+          list="Offres d'emploi"
           icon={jobsIcon}
           isOpen={isOpen}
           delay="400"
@@ -48,7 +48,7 @@ function List({ isOpen, setIsOpen }) {
         />
         <ListItem
           to="/postjob"
-          list="Employer Portal"
+          list="Portail Employeur"
           icon={postJobIcon}
           isOpen={isOpen}
           delay="500"
@@ -57,7 +57,7 @@ function List({ isOpen, setIsOpen }) {
         />
         <ListItem
           to="/your-applications"
-          list="Applied Jobs"
+          list="Vos candidatures"
           icon={appliedJobsIcon}
           isOpen={isOpen}
           delay="600"
@@ -66,7 +66,7 @@ function List({ isOpen, setIsOpen }) {
         />
         <ListItem
           to="/settings"
-          list="Settings"
+          list="Paramètres"
           icon={settingsIcon}
           isOpen={isOpen}
           delay="700"
@@ -75,7 +75,7 @@ function List({ isOpen, setIsOpen }) {
         />
         <ListItem
           to="/contact"
-          list="Contact us"
+          list="Contactez-nous"
           icon={contactUsIcon}
           isOpen={isOpen}
           delay="800"
@@ -84,7 +84,7 @@ function List({ isOpen, setIsOpen }) {
         />
         <ListItem
           to="/about"
-          list="About us"
+          list="Découvrez-nous"
           icon={aboutUsIcon}
           isOpen={isOpen}
           delay="900"

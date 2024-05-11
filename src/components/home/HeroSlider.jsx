@@ -10,33 +10,6 @@ function HeroSlider() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    appendDots: (dots) => (
-      <div style={{}}>
-        <ul
-          style={{
-            margin: '0px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-            gap: '10px',
-          }}
-        >
-          {dots}
-        </ul>
-      </div>
-    ),
-    customPaging: (i) => (
-      <div
-        style={{
-          width: '10px',
-          height: '10px',
-          color: 'blue',
-          borderRadius: '100%',
-          border: '2px #004D40 solid',
-          backgroundColor: '#004D405c',
-        }}
-      ></div>
-    ),
   };
   return (
     <Slider {...settings} className="">
@@ -48,3 +21,4 @@ function HeroSlider() {
 }
 
 export default HeroSlider;
+// #004D40

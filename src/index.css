@@ -30,11 +30,13 @@
 .slick-arrow {
   display: none !important;
 }
-.slick-active {
+.slick-dots li button::before {
+  content: '';
   width: 10px;
-  height: 10px;
-  color: blue;
   border-radius: 100%;
-  border: 2px #004d40 solid;
+  height: 10px;
+  background-color: #004d40;
+}
+.slick-dots li .slick-active {
   background-color: #004d40;
 }
