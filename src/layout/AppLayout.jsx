@@ -8,9 +8,7 @@ function AppLayout() {
   return (
     <div className="bg-teal-50">
       <Navbar setIsOpen={setIsOpen} isOpen={isOpen} />
-      <div
-        className={`min-h-screen ${isOpen ? 'bg-black bg-opacity-40 ' : ''} `}
-      >
+      <div className={`min-h-dvh ${isOpen ? 'bg-black bg-opacity-40 ' : ''} `}>
         <div className="lg:pl-[200px] xl:pl-[15.8%]">
           <Outlet />
         </div>

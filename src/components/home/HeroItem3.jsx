@@ -19,7 +19,11 @@ function HeroItem3() {
           Savoir plus
         </button>
       </div>
-      <img src={heroItemImg} className="my-auto max-h-[70%]  max-w-[50%] " />
+      <img
+        src={heroItemImg}
+        className="my-auto max-h-[70%]  max-w-[50%]"
+        alt="Hero section "
+      />
     </div>
   );
 }
