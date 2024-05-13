@@ -11,37 +11,37 @@ import {
 function Statistics() {
   const data = [
     {
-      label: 'MULHOUSE',
-      value: 8020,
-      color: '#004D40',
-    },
-    {
-      label: 'COLMAR',
+      label: 'COLMAR 37%',
       value: 9450,
       color: '#318CE7',
     },
     {
-      label: 'GUEBWILLER',
+      label: 'MULHOUSE 32%',
+      value: 8020,
+      color: '#004D40',
+    },
+    {
+      label: 'GUEBWILLER 9%',
       value: 2350,
       color: '#ED2939',
     },
     {
-      label: 'THANN-CERNAY',
+      label: 'THANN-CERNAY 8%',
       value: 2270,
       color: '#FF8C00',
     },
     {
-      label: 'SAINT-LOUIS',
+      label: 'SAINT-LOUIS 7%',
       value: 1930,
       color: '#FFD700',
     },
     {
-      label: 'ALTKIRCH',
+      label: 'ALTKIRCH 5%',
       value: 1160,
       color: '#00FF40',
     },
     {
-      label: 'SELESTAT',
+      label: 'SELESTAT 2%',
       value: 160,
       color: '#B57EDC',
     },
@@ -72,72 +72,62 @@ function Statistics() {
   ];
 
   return (
-    <ResponsiveContainer
-      className="mt-12"
-      width="95%"
-      height={data.length * 33}
-    >
-      <PieChart>
-        <Pie
-          className="border-4 border-red-500"
-          data={data}
-          nameKey="label"
-          dataKey="value"
-          innerRadius={85}
-          outerRadius={110}
-          // cx={40}
-          // cy={50}
-          paddingAngle={3}
-        >
-          {data.map((entry) => (
-            <Cell fill={entry.color} stroke="#E0F2F1" key={entry.label} />
-          ))}
-        </Pie>
-        <Tooltip />
-        <Legend
-          verticalAlign="middle"
-          align="right"
-          width="30%"
-          layout="vertical"
-          iconSize={15}
-          iconType="circle"
-        />
-      </PieChart>
-      <PieChart>
-        <Pie
-          data={difficultiesData}
-          nameKey="label"
-          dataKey="value"
-          innerRadius={85}
-          outerRadius={110}
-          // cx={40}
-          // cy={50}
-          paddingAngle={3}
-        >
-          {difficultiesData.map((entry) => (
-            <Cell fill={entry.color} stroke="#E0F2F1" key={entry.label} />
-          ))}
-        </Pie>
-        <Tooltip />
-      </PieChart>
-      <PieChart>
-        <Pie
-          data={seasonalData}
-          nameKey="label"
-          dataKey="value"
-          innerRadius={85}
-          outerRadius={110}
-          // cx={40}
-          // cy={50}
-          paddingAngle={3}
-        >
-          {data.map((entry) => (
-            <Cell fill={entry.color} stroke="#E0F2F1" key={entry.label} />
-          ))}
-        </Pie>
-        <Tooltip />
-      </PieChart>
-    </ResponsiveContainer>
+    <div className="my-10 xl:flex">
+      <ResponsiveContainer width="100%" className="mt-20" height={320}>
+        <PieChart>
+          <Pie
+            data={data}
+            nameKey="label"
+            dataKey="value"
+            innerRadius={75}
+            outerRadius={110}
+            paddingAngle={2}
+          >
+            {data.map((entry, index) => (
+              <Cell fill={entry.color} key={index} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend iconType="circle" wrapperStyle={{ top: '90%' }} />
+        </PieChart>
+      </ResponsiveContainer>
+      <ResponsiveContainer width="100%" height={280} className="mt-20">
+        <PieChart>
+          <Pie
+            data={difficultiesData}
+            nameKey="label"
+            dataKey="value"
+            innerRadius={75}
+            outerRadius={110}
+            paddingAngle={2}
+          >
+            {difficultiesData.map((entry) => (
+              <Cell fill={entry.color} stroke="#E0F2F1" key={entry.label} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend iconType="circle" wrapperStyle={{ top: '90%' }} />
+        </PieChart>
+      </ResponsiveContainer>
+      <ResponsiveContainer width="100%" height={280} className="mt-20">
+        <PieChart>
+          <Pie
+            data={seasonalData}
+            nameKey="label"
+            dataKey="value"
+            innerRadius={75}
+            outerRadius={110}
+            paddingAngle={2}
+          >
+            {data.map((entry) => (
+              <Cell fill={entry.color} stroke="#E0F2F1" key={entry.label} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend iconType="circle" wrapperStyle={{ top: '90%' }} />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 
