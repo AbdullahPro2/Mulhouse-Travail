@@ -7,7 +7,6 @@ function Home() {
     <div className="">
       <HeroSection />
       <Statistics />
-      {/* <HeroSection /> */}
     </div>
   );
 }

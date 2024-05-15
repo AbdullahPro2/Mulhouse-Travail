@@ -2,7 +2,7 @@ import React from 'react';
 import heroItemImg from '../../assets/heroSection/hero1Image.jpg';
 function HeroItem1() {
   return (
-    <div className="flex h-[40vh] justify-between bg-[#2E8B57] sm:h-[50vh] md:h-[60vh]">
+    <div className="sm:h-[370px]justify-between flex h-[280px] bg-[#2E8B57]  md:h-[470px]  ">
       <div className="my-auto flex flex-col gap-2 pl-2 sm:max-w-[50%] sm:gap-3 sm:px-3 md:gap-4 lg:px-5 xl:gap-6 xl:px-8">
         <h1 className="text-base uppercase tracking-[9%] text-white xs:text-lg sm:text-xl lg:text-2xl xl:text-4xl">
           Ensemble, trouvons

@@ -8,6 +8,17 @@ import {
   Tooltip,
 } from 'recharts';
 
+function SpanDot() {
+  return <span className="text-3xl font-black">•</span>;
+}
+function ListItem({ color, text }) {
+  return (
+    <li className={`${color} flex items-center justify-center gap-2`}>
+      <SpanDot /> {text}
+    </li>
+  );
+}
+
 function Statistics() {
   const data = [
     {
@@ -50,7 +61,7 @@ function Statistics() {
     {
       label: 'Nombre de projets',
       value: 8020,
-      color: '#006A40',
+      color: '#50C878',
     },
     {
       label: 'Part de difficiles',
@@ -62,12 +73,12 @@ function Statistics() {
     {
       label: 'Nombre de projets',
       value: 8020,
-      color: '#006A40',
+      color: '#50C878',
     },
     {
       label: 'Part de saisonniers',
       value: 898,
-      color: '#00FF40',
+      color: '#318CE7',
     },
   ];
 
@@ -77,8 +88,8 @@ function Statistics() {
         BMO
       </h1>
       <p className="mt-6 text-justify text-xl font-medium text-[#004D40] ">
-        Nombre de projets de recrutement en 2024 par Bassin d'emploi Région : 25
-        320
+        Nombre de projets de recrutement en 2024 par Bassin d'emploi Région
+        Grand Est, Département : Haut-Rhin 68: 25 320
       </p>
       <div className="my-10 xl:flex ">
         <ResponsiveContainer
@@ -103,28 +114,21 @@ function Statistics() {
               ))}
             </Pie>
             <Tooltip />
-            {/* <Legend
-              iconType="circle"
-              iconSize="10px"
-              wrapperStyle={{
-                top: '60%',
-              }}
-            /> */}
           </PieChart>
-          <ul className="flex w-[250px] flex-wrap gap-2  text-center">
-            <li className="text-[#318CE7]">• COLMAR</li>
-            <li className="text-[#006A40]">• MULHOUSE</li>
-            <li className="text-[#ED2939]">• GUEBWILLER</li>
-            <li className="text-[#FF8C00]">• THANN-CERNAY</li>
-            <li className="text-[#FFD700]">• SAINT-LOUIS</li>
-            <li className="text-[#00FF40]">• ALTKIRCH</li>
-            <li className="text-[#B57EDC]">• SELESTAT</li>
+          <ul className="flex flex-wrap items-center justify-center gap-2  text-center">
+            <ListItem text="COLMAR" color="text-[#318CE7]" />
+            <ListItem text="MULHOUSE" color="text-[#006A40]" />
+            <ListItem text="GUEBWILLER" color="text-[#ED2939]" />
+            <ListItem text="THANN-CERNAY" color="text-[#FF8C00]" />
+            <ListItem text="SAINT-LOUIS" color="text-[#FFD700]" />
+            <ListItem text="ALTKIRCH" color="text-[#00FF40]" />
+            <ListItem text="SELESTAT" color="text-[#B57EDC]" />
           </ul>
         </ResponsiveContainer>
         <ResponsiveContainer
           width="100%"
           height={250}
-          className="relative mt-56"
+          className="relative mt-72 xs:mt-20   lg:mt-0"
         >
           <h2 className=" text-center text-lg font-black tracking-widest text-[#004D40]">
             Difficultés à Recruter
@@ -143,17 +147,15 @@ function Statistics() {
               ))}
             </Pie>
             <Tooltip />
-            {/* <Legend
-              iconType="circle"
-              wrapperStyle={{ top: '90%' }}
-              iconSize="10px"
-            /> */}
-          </PieChart>
+          </PieChart>{' '}
+          <ul className="flex flex-wrap items-center justify-center gap-2  text-center">
+            <ListItem text="MULHOUSE 59,4 %" color="text-[#ED2939]" />
+          </ul>
         </ResponsiveContainer>
         <ResponsiveContainer
           width="100%"
           height={250}
-          className="relative mt-12"
+          className="relative mt-20 lg:mt-0"
         >
           <h2 className="text-center text-lg font-black tracking-widest text-[#004D40]">
             Emplois Saisonniers
@@ -167,17 +169,15 @@ function Statistics() {
               outerRadius={110}
               paddingAngle={2}
             >
-              {data.map((entry) => (
+              {seasonalData.map((entry) => (
                 <Cell fill={entry.color} stroke="#E0F2F1" key={entry.label} />
               ))}
             </Pie>
             <Tooltip />
-            {/* <Legend
-              iconSize="10px"
-              iconType="circle"
-              wrapperStyle={{ top: '90%' }}
-            /> */}
           </PieChart>
+          <ul className="flex flex-wrap items-center justify-center gap-2  text-center">
+            <ListItem text=" MULHOUSE 11,2 %" color="text-[#318CE7]" />
+          </ul>
         </ResponsiveContainer>
       </div>
     </div>
