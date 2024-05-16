@@ -4,7 +4,7 @@ function HeroItem3() {
   return (
     <div className="flex h-[280px]  justify-between bg-[#FED8B1] sm:h-[370px]  md:h-[470px] ">
       <div className=" my-auto flex max-w-[50%] flex-col gap-2 pl-2 sm:gap-3 sm:px-3 md:gap-4 lg:px-5 xl:gap-6 xl:px-8">
-        <h1 className=" text-base  tracking-[9%]    xs:text-lg sm:text-xl lg:text-2xl xl:text-4xl">
+        <h1 className=" text-base sm:text-xl lg:text-2xl xl:text-4xl">
           Découvrez ce que disent nos experts sur les <br />
           <span className="font-black uppercase tracking-[9%] text-[#004D40]">
             meilleurs CV

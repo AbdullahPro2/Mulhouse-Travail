@@ -84,7 +84,7 @@ function Statistics() {
 
   return (
     <div className="my-10 px-4">
-      <h1 className="text-center text-2xl font-black tracking-widest text-[#004D40]">
+      <h1 className="text-center text-2xl font-black tracking-widest text-[#004D40] lg:text-3xl">
         BMO
       </h1>
       <p className="mt-6 text-justify text-xl font-medium text-[#004D40] ">

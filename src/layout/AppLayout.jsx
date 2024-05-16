@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
 import { useState } from 'react';
+import Footer from '../components/footer/Footer';
 
 function AppLayout() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ function AppLayout() {
           <Outlet />
         </div>
       </div>
-      <footer className="lg:pl-[200px] xl:pl-[15.8%]">Footer</footer>
+      <Footer />
     </div>
   );
 }
