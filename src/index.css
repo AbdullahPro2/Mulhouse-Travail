@@ -40,3 +40,7 @@
 .slick-dots li .slick-active {
   background-color: #004d40;
 }
+
+.MuiInputBase-input {
+  padding: 8px !important;
+}
