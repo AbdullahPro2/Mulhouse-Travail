@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <footer
-      className="mt-10 flex flex-col items-center  justify-center  bg-teal-950 p-8 text-sm text-white md:grid md:grid-cols-3 md:grid-rows-[1fr_auto_auto] md:text-base lg:pl-[200px] xl:pl-[15.8%]
+      className="mt-10 flex flex-col items-center justify-center  bg-teal-950  p-2 text-sm text-white sm:text-base md:grid md:grid-cols-3 md:grid-rows-[1fr_auto_auto] md:text-base lg:pl-[200px] xl:pl-[15.8%]
  xl:text-lg    "
     >
       <div className="mb-4 flex flex-col   md:mb-0 md:h-full md:p-5 ">
@@ -18,7 +18,7 @@ function Footer() {
           <img src={Logo} alt="Logo" className="w-40   lg:w-64 " />
         </Link>
       </div>
-      <div className=" mb-4 flex w-full list-none items-center justify-center gap-2 text-xs md:mb-0    md:h-full md:w-full md:flex-col md:gap-8 md:p-5 md:text-base lg:text-lg ">
+      <div className=" mb-4 flex w-full list-none flex-wrap items-center justify-center gap-3 text-xs sm:text-sm md:mb-0 md:h-full md:w-full md:flex-col md:gap-8 md:p-5 md:text-base lg:text-lg ">
         <Link to="/jobs">
           <li className="cursor-pointer">Offres d'emploi</li>
         </Link>
@@ -32,7 +32,7 @@ function Footer() {
           <li className="cursor-pointer">Portail Employeur</li>
         </Link>
       </div>
-      <ul className="mb-4 flex w-max gap-2 text-xs md:mb-0 md:h-full md:w-full md:flex-col md:items-center md:gap-8 md:p-5 md:text-center md:text-base lg:text-lg ">
+      <ul className=" mb-4 mt-4 flex w-full list-none flex-wrap items-center justify-center gap-3 text-xs sm:mt-0 sm:text-sm md:mb-0 md:h-full md:w-full md:flex-col md:gap-8 md:p-5 md:text-base lg:text-lg ">
         <li className=" cursor-pointer md:w-max">Soutien</li>
         <li className=" cursor-pointer md:w-max">Entreprise</li>
         <li className=" cursor-pointer md:w-max">Conceptions</li>
@@ -41,7 +41,7 @@ function Footer() {
         </li>
       </ul>
 
-      <div className="col-span-3 mb-4 flex items-center justify-center  gap-8    md:mb-0 md:gap-20 md:p-5 ">
+      <div className="col-span-3 mb-4 mt-5 flex items-center justify-center gap-8  sm:mt-0    md:mb-0 md:gap-20 md:p-5 ">
         <a
           href="https://github.com/AbdullahPro2"
           target="_blank"
