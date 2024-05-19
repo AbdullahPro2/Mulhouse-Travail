@@ -3,7 +3,7 @@ import ListItem from './ListItem';
 import homeIcon from '../../assets/navbar/dashboard.png';
 import aboutUsIcon from '../../assets/navbar/aboutUs.png';
 import contactUsIcon from '../../assets/navbar/contactUs.png';
-import settingsIcon from '../../assets/navbar/recruiting.png';
+import settingsIcon from '../../assets/navbar/settings.png';
 import appliedJobsIcon from '../../assets/navbar/appliedApplication.png';
 import jobsIcon from '../../assets/navbar/radar.png';
 import postJobIcon from '../../assets/navbar/recruiting.png';
