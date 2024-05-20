@@ -6,8 +6,15 @@ import Footer from '../components/footer/Footer';
 
 function AppLayout() {
   const [isOpen, setIsOpen] = useState(false);
+  function outsideTouch() {
+    if (isOpen) {
+      console.log('clicked');
+      console.log(isOpen);
+      setIsOpen(false);
+    }
+  }
   return (
-    <div className="bg-teal-50">
+    <div className="bg-teal-50" onClick={outsideTouch}>
       <Navbar setIsOpen={setIsOpen} isOpen={isOpen} />
       <div className={`min-h-dvh ${isOpen ? 'bg-black bg-opacity-40 ' : ''} `}>
         <div className="lg:pl-[200px] xl:pl-[15.8%]">

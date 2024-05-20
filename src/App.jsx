@@ -12,6 +12,7 @@ import PostedApplications from './pages/PostedApplications';
 import Login from './features/authentication/Login';
 import Signup from './features/authentication/Signup';
 import CV from './pages/CV';
+import Thankyou from './components/contact/Thankyou';
 function App() {
   const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ function App() {
         {
           path: '/how-to-write-cv',
           element: <CV />,
+        },
+        {
+          path: '/merci-pour-contactez',
+          element: <Thankyou />,
         },
       ],
     },

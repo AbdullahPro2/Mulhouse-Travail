@@ -25,7 +25,7 @@ function Signup() {
             />
           </FormRow>
         </div>
-        <FormRow label="Acte de naissance ">
+        <FormRow label="Date de naissance ">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
               format="DD / MM / YY"
@@ -47,21 +47,21 @@ function Signup() {
             className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
           />
         </FormRow>
-        <FormRow label="le mot de passe">
+        <FormRow label="mot de passe">
           <input
             type="password"
             id="password"
             className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
           />
         </FormRow>
-        <FormRow label="Confirmez le mot de passe">
+        <FormRow label="Confirmez mot de passe">
           <input
             type="password"
             id="confirmPassword"
             className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
           />
         </FormRow>
-        <FormRow label="Adress">
+        <FormRow label="Adresse">
           <input
             type="text"
             id="adress"
