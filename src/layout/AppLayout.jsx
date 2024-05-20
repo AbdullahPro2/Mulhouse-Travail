@@ -8,8 +8,6 @@ function AppLayout() {
   const [isOpen, setIsOpen] = useState(false);
   function outsideTouch() {
     if (isOpen) {
-      console.log('clicked');
-      console.log(isOpen);
       setIsOpen(false);
     }
   }
