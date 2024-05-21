@@ -4,20 +4,27 @@ import peoples from '../assets/about/people.jpg';
 import profile from '../assets/about/profile3.jpg';
 function About() {
   return (
-    <div className="">
-      <h1 className="my-6 text-center font-black">À propos de nous.</h1>
-      <img
-        src={mulhouseCover}
-        className="mb-6 h-[200px] w-full xs:h-[300px] md:h-[400px] "
-        alt="Mulhouse cover "
-      />
-      <div className=" px-4">
-        <h1 className=" text-center font-bold">Notre Mission</h1>
+    <div className="container mx-auto px-4 text-emerald-950">
+      <h1 className="my-6 text-center text-4xl font-black">À propos de nous</h1>
+      <div className="mb-6 flex justify-center">
+        <img
+          src={mulhouseCover}
+          className="w-full max-w-4xl rounded-lg shadow-lg"
+          alt="Mulhouse cover"
+        />
+      </div>
+      <p className="text-center text-lg italic text-gray-600">
+        Vue panoramique de Mulhouse, cœur du Grand Est
+      </p>
+
+      <div className="mt-10 px-4">
+        <h2 className="mb-4 text-center text-3xl font-bold">Notre Mission</h2>
         <h3 className="mb-6 text-center text-2xl font-semibold">
           Faciliter la recherche d'emploi pour tous
         </h3>
-        <div className="flex flex-col md:flex-row md:justify-between">
-          <p className="xl:text:2xl  mb-5 text-justify md:max-w-[50%] md:text-lg md:leading-[2] lg:text-xl lg:leading-[2]">
+
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+          <p className="mb-5 text-justify text-lg leading-relaxed md:max-w-[50%]">
             Nous aidons les gens à trouver leur carrière professionnelle en leur
             trouvant l'emploi de leurs rêves. Notre mission est de rendre la
             recherche d'emploi facile pour les habitants de Mulhouse et ceux qui
@@ -28,23 +35,23 @@ function About() {
           </p>
           <img
             src={peoples}
-            alt="about us icons "
-            className="mb-5 md:max-w-[50%]"
+            alt="About us icons"
+            className="mb-5 rounded-lg shadow-lg md:max-w-[45%]"
           />
         </div>
       </div>
 
-      <div className="mt-6  space-y-5 px-4 ">
-        <h3 className="text-center text-2xl font-semibold">Notre Histoire</h3>
+      <div className="mt-10 space-y-5 px-4">
+        <h2 className="mb-4 text-center text-3xl font-bold">Notre Histoire</h2>
 
-        <div className="flex flex-col md:flex-row md:justify-between">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <img
             src={profile}
-            alt="about us icons"
-            className="mx-auto mb-5 h-[20rem] w-[20rem] md:h-[25rem] md:w-[25rem] lg:h-[30rem] lg:w-[30rem] xl:h-[32rem] xl:w-[32rem]"
+            alt="Abdullah's profile picture"
+            className="mx-auto mb-5 rounded-full shadow-lg md:h-96 md:w-96 lg:h-[35rem] lg:w-[30rem] "
           />
-          <p className="xl:text:2xl  mb-5 text-justify md:max-w-[50%] md:text-lg md:leading-[2] lg:text-xl lg:leading-[2]">
-            Je m'appelle Abdullah fondateur de Mulhouse Travail. En tant
+          <p className="mb-5 text-justify text-lg leading-relaxed md:max-w-[50%]">
+            Je m'appelle Abdullah, fondateur de Mulhouse Travail. En tant
             qu'étudiant et chercheur d'emploi à Mulhouse, j'ai remarqué que les
             autres sites web où nous pouvions trouver des emplois étaient un peu
             difficiles à utiliser pour de nombreux utilisateurs d'après mon

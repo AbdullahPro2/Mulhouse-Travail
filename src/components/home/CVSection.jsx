@@ -18,7 +18,7 @@ function CVSection() {
           <h3 className="mt-10 text-justify text-lg font-medium lg:text-2xl">
             Un CV gagnant devrait présenter les caractéristiques suivantes :
           </h3>
-          <ul className="space-y-2 lg:text-lg">
+          <ul className="space-y-2 text-emerald-950 lg:text-lg">
             <li>1. Créer un en-tête avec vos coordonnées de contact</li>
             <li>2. Rédiger un résumé professionnel</li>
             <li>3. Détailler votre formation</li>

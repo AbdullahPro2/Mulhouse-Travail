@@ -14,14 +14,14 @@ function Navbar({ isOpen, setIsOpen }) {
         <Hamburger
           toggled={isOpen}
           toggle={setIsOpen}
-          color={`${isOpen ? '#feffff' : '#004D40'}  `}
+          color={`${isOpen ? '#fff' : '#1b64ac'}  `}
           duration={0.8}
           direction="right"
         />
       </div>
 
       <div
-        className={` absolute left-0 top-0 z-40 flex h-screen  -translate-x-full flex-col justify-between  overflow-auto !bg-[#004d40] !bg-opacity-100 pt-20 text-sm text-[white] transition-all duration-150 ease-in-out no-scrollbar lg:fixed lg:w-[200px] lg:translate-x-0 xl:w-[15.8%] xl:text-base ${
+        className={` absolute left-0 top-0 z-40 flex h-screen  -translate-x-full flex-col justify-between  overflow-auto bg-[#1b64ac] !bg-opacity-100 pt-20 text-sm text-[white] transition-all duration-150 ease-in-out no-scrollbar lg:fixed lg:w-[200px] lg:translate-x-0 xl:w-[15.8%] xl:text-base ${
           isOpen ? 'translate-x-0' : 'delay-[1200ms]'
         }`}
       >

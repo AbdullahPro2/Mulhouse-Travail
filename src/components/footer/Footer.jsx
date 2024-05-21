@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <footer
-      className="mt-10 flex flex-col items-center justify-center  bg-teal-950  p-2 text-sm text-white sm:text-base md:grid md:grid-cols-3 md:grid-rows-[1fr_auto_auto] md:text-base lg:pl-[200px] xl:pl-[15.8%]
+      className="mt-10 flex flex-col items-center justify-center  bg-[#5B759B]  p-2 text-sm text-white sm:text-base md:grid md:grid-cols-3 md:grid-rows-[1fr_auto_auto] md:text-base lg:pl-[200px] xl:pl-[15.8%]
  xl:text-lg    "
     >
       <div className="mb-4 flex flex-col   md:mb-0 md:h-full md:p-5 ">

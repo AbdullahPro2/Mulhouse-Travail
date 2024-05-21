@@ -58,7 +58,7 @@ function App() {
           element: <About />,
         },
         {
-          path: '/how-to-write-cv',
+          path: '/comment-rédiger-cv',
           element: <CV />,
         },
         {

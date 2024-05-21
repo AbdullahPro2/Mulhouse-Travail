@@ -12,7 +12,7 @@ function AppLayout() {
     }
   }
   return (
-    <div className="bg-teal-50" onClick={outsideTouch}>
+    <div className="bg-[#F0F8FF]" onClick={outsideTouch}>
       <Navbar setIsOpen={setIsOpen} isOpen={isOpen} />
       <div className={`min-h-dvh ${isOpen ? 'bg-black bg-opacity-40 ' : ''} `}>
         <div className="lg:pl-[200px] xl:pl-[15.8%]">
@@ -25,10 +25,10 @@ function AppLayout() {
 }
 
 export default AppLayout;
-// #1B4965
-// #FBFFFF
-// #FF9800
 
 // #004D40
 // #E0F2F1
 // #FF8120
+
+// #5B759B
+// #BBD5FF

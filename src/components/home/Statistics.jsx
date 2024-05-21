@@ -84,20 +84,17 @@ function Statistics() {
 
   return (
     <div className="my-10 px-4">
-      <h1 className="text-center text-2xl font-black tracking-widest text-[#004D40] lg:text-3xl">
+      <h1 className="text-center text-2xl font-black tracking-widest text-[#1b64ac] lg:text-3xl">
         BMO
       </h1>
-      <p className="mt-6 text-justify text-xl font-medium text-[#004D40] ">
-        Nombre de projets de recrutement en 2024 par Bassin d'emploi Région
-        Grand Est, Département : Haut-Rhin 68: 25 320
-      </p>
+
       <div className="my-10 xl:flex ">
         <ResponsiveContainer
           width="100%"
           height={250}
           className="relative mb-36"
         >
-          <h2 className=" text-center text-lg font-black tracking-widest text-[#004D40]">
+          <h2 className="text-center text-lg font-black tracking-widest ">
             Nombre de project par ville
           </h2>
           <PieChart>
@@ -116,6 +113,7 @@ function Statistics() {
             <Tooltip />
           </PieChart>
           <ul className="flex flex-wrap items-center justify-center gap-2  text-center">
+            <ListItem text=" Haut-Rhin 68: 25 320" color="text-[#AB274F]" />
             <ListItem text="COLMAR" color="text-[#318CE7]" />
             <ListItem text="MULHOUSE" color="text-[#006A40]" />
             <ListItem text="GUEBWILLER" color="text-[#ED2939]" />
@@ -128,9 +126,9 @@ function Statistics() {
         <ResponsiveContainer
           width="100%"
           height={250}
-          className="relative mt-72 xs:mt-20   lg:mt-0"
+          className="relative mt-80  xs:mt-52   lg:mt-0"
         >
-          <h2 className=" text-center text-lg font-black tracking-widest text-[#004D40]">
+          <h2 className=" text-center text-lg font-black tracking-widest ">
             Difficultés à Recruter
           </h2>
           <PieChart>
@@ -157,7 +155,7 @@ function Statistics() {
           height={250}
           className="relative mt-20 lg:mt-0"
         >
-          <h2 className="text-center text-lg font-black tracking-widest text-[#004D40]">
+          <h2 className="text-center text-lg font-black tracking-widest ">
             Emplois Saisonniers
           </h2>
           <PieChart>
