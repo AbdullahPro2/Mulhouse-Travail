@@ -4,29 +4,29 @@ import phone from '../assets/contact/contactUs.png';
 import location from '../assets/contact/location.png';
 import ContactingItem from '../components/contact/ContactingItem';
 import FormRow from '../features/authentication/FormRow';
+import PageHeading from '../layout/PageHeading';
 function Contact() {
   return (
     <div>
-      <h1 className="mt-8 text-center font-black uppercase text-[#004D40]">
-        How Can We Help?
-      </h1>
+      <PageHeading text="Comment pouvons nous aider ?" />
+
       <div className="mt-5 flex flex-col justify-between gap-6  px-2 xs:px-4 sm:px-6 md:flex-row md:px-10 lg:px-14">
         <div className="md:max-w-1/2 md:space-y-10">
           <ContactingItem
             img={email}
             text="Our Service is always in your disponibility"
           >
-            <span className="cursor-pointer font-semibold text-teal-800">
+            <span className="cursor-pointer font-semibold text-[#1b64ac]">
               mulhouse@travail.fr
             </span>
           </ContactingItem>
           <ContactingItem img={phone} text="You can call us">
-            <span className="cursor-pointer font-semibold text-teal-800">
+            <span className="cursor-pointer font-semibold text-[#1b64ac]">
               lundi - jeudi 8:00h - 17:00h <br /> vendredi 8:00h - 12:00 h
             </span>
           </ContactingItem>
           <ContactingItem img={location} text=" We would love to meet you.">
-            <span className="cursor-pointer font-semibold text-teal-800">
+            <span className="cursor-pointer font-semibold text-[#1b64ac]">
               7 Rue de meurette 67200, Mulhouse
             </span>
           </ContactingItem>
@@ -75,7 +75,7 @@ function Contact() {
             ></input>
             <button
               type="submit"
-              className="send-message mt-4 w-full cursor-pointer rounded border-0 bg-[#004D40] px-4 py-2 text-center font-normal leading-loose text-teal-50 md:text-lg lg:mt-16"
+              className="send-message mt-4 w-full cursor-pointer rounded border-0 bg-[#1b64ac] px-4 py-2 text-center font-normal leading-loose text-teal-50 md:text-lg lg:mt-16"
             >
               Send Message
             </button>

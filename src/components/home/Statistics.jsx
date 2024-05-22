@@ -7,6 +7,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from 'recharts';
+import PageHeading from '../../layout/PageHeading';
 
 function SpanDot() {
   return <span className="text-3xl font-black">•</span>;
@@ -29,12 +30,12 @@ function Statistics() {
     {
       label: 'MULHOUSE 32%',
       value: 8020,
-      color: '#006A40',
+      color: '#89abdc',
     },
     {
       label: 'GUEBWILLER 9%',
       value: 2350,
-      color: '#ED2939',
+      color: '#b71c1c',
     },
     {
       label: 'THANN-CERNAY 8%',
@@ -49,45 +50,42 @@ function Statistics() {
     {
       label: 'ALTKIRCH 5%',
       value: 1160,
-      color: '#00FF40',
+      color: '#B57EDC',
     },
     {
       label: 'SELESTAT 2%',
       value: 160,
-      color: '#B57EDC',
+      color: '#00356B',
     },
   ];
   const difficultiesData = [
     {
       label: 'Nombre de projets',
       value: 8020,
-      color: '#50C878',
+      color: '#318CE7',
     },
     {
       label: 'Part de difficiles',
       value: 4763,
-      color: '#ED2939',
+      color: '#FF8C00',
     },
   ];
   const seasonalData = [
     {
       label: 'Nombre de projets',
       value: 8020,
-      color: '#50C878',
+      color: '#318CE7',
     },
     {
       label: 'Part de saisonniers',
       value: 898,
-      color: '#318CE7',
+      color: '#81c784',
     },
   ];
 
   return (
     <div className="my-10 px-4">
-      <h1 className="text-center text-2xl font-black tracking-widest text-[#1b64ac] lg:text-3xl">
-        BMO
-      </h1>
-
+      <PageHeading text="BMO" />
       <div className="my-10 xl:flex ">
         <ResponsiveContainer
           width="100%"
@@ -115,12 +113,12 @@ function Statistics() {
           <ul className="flex flex-wrap items-center justify-center gap-2  text-center">
             <ListItem text=" Haut-Rhin 68: 25 320" color="text-[#AB274F]" />
             <ListItem text="COLMAR" color="text-[#318CE7]" />
-            <ListItem text="MULHOUSE" color="text-[#006A40]" />
+            <ListItem text="MULHOUSE" color="text-[#89abdc]" />
             <ListItem text="GUEBWILLER" color="text-[#ED2939]" />
             <ListItem text="THANN-CERNAY" color="text-[#FF8C00]" />
             <ListItem text="SAINT-LOUIS" color="text-[#FFD700]" />
-            <ListItem text="ALTKIRCH" color="text-[#00FF40]" />
-            <ListItem text="SELESTAT" color="text-[#B57EDC]" />
+            <ListItem text="ALTKIRCH" color="text-[#B57EDC]" />
+            <ListItem text="SELESTAT" color="text-[#00356B]" />
           </ul>
         </ResponsiveContainer>
         <ResponsiveContainer
@@ -147,7 +145,7 @@ function Statistics() {
             <Tooltip />
           </PieChart>{' '}
           <ul className="flex flex-wrap items-center justify-center gap-2  text-center">
-            <ListItem text="MULHOUSE 59,4 %" color="text-[#ED2939]" />
+            <ListItem text="MULHOUSE 59,4 %" color="text-[#FF8C00]" />
           </ul>
         </ResponsiveContainer>
         <ResponsiveContainer
@@ -174,7 +172,7 @@ function Statistics() {
             <Tooltip />
           </PieChart>
           <ul className="flex flex-wrap items-center justify-center gap-2  text-center">
-            <ListItem text=" MULHOUSE 11,2 %" color="text-[#318CE7]" />
+            <ListItem text=" MULHOUSE 11,2 %" color="text-[#81c784]" />
           </ul>
         </ResponsiveContainer>
       </div>

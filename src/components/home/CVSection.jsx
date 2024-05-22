@@ -1,13 +1,12 @@
 import React from 'react';
 import successImage from '../../assets/CVSection/22378313_6566478.svg';
 import { NavLink } from 'react-router-dom';
+import PageHeading from '../../layout/PageHeading';
 
 function CVSection() {
   return (
-    <div className="mt-24 px-3">
-      <h1 className="text-center text-2xl font-black tracking-widest text-[#004D40] lg:text-3xl">
-        Comment rédiger un CV gagnant ?
-      </h1>
+    <div className="mt-24 px-4">
+      <PageHeading text="Comment rédiger un CV gagnant ?" />
       <div className="md:flex md:items-center md:justify-center ">
         <img
           src={successImage}
@@ -15,10 +14,10 @@ function CVSection() {
           className="mx-auto mt-7 xs:w-[80%] md:w-1/2 lg:w-[400px] "
         />
         <div className="mt-7 space-y-3 md:w-1/2 ">
-          <h3 className="mt-10 text-justify text-lg font-medium lg:text-2xl">
+          <h3 className="mt-10 text-justify text-lg font-medium lg:text-2xl xl:font-semibold">
             Un CV gagnant devrait présenter les caractéristiques suivantes :
           </h3>
-          <ul className="space-y-2 text-emerald-950 lg:text-lg">
+          <ul className="space-y-2 text-emerald-950 lg:text-lg xl:space-y-4 xl:text-xl">
             <li>1. Créer un en-tête avec vos coordonnées de contact</li>
             <li>2. Rédiger un résumé professionnel</li>
             <li>3. Détailler votre formation</li>
@@ -28,7 +27,7 @@ function CVSection() {
             <li>7. Inclure des sections supplémentaires si</li>
           </ul>
           <NavLink to="how-to-write-cv">
-            <button className="mx-auto mt-8 block bg-teal-950 px-4 py-2 text-white md:mx-0">
+            <button className="mt-3 w-fit  bg-[#1b64ac] px-2 py-[5px] text-xs font-semibold  text-white sm:text-lg lg:px-4 lg:py-3 lg:text-xl xl:px-7  xl:py-4">
               Savoir Plus!
             </button>
           </NavLink>

@@ -4,7 +4,7 @@
 	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <g id="Background_Simple">
 	<g>
-		<path style="fill:#92E3A9;" d="M323.833,36.062c0,0-79.342-31.171-155.222,12.821C92.731,92.874,56.279,183.385,24.834,255.824
+		<path style="fill:#89CFF0;" d="M323.833,36.062c0,0-79.342-31.171-155.222,12.821C92.731,92.874,56.279,183.385,24.834,255.824
 			c-31.445,72.44-10.206,147.607,49.578,183.277c59.784,35.67,98.467-13.379,180.987-13.52c82.52-0.141,105.06,12.726,172.29-33.764
 			c67.23-46.49,76.547-160.451,20.216-246.535C391.574,59.198,323.833,36.062,323.833,36.062z"/>
 		<path style="opacity:0.7;fill:#FFFFFF;" d="M323.833,36.062c0,0-79.342-31.171-155.222,12.821
@@ -115,11 +115,11 @@
 	<g>
 		<g>
 			
-				<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 34.9007 350.0367)" style="fill:#92E3A9;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="439.982" cy="132.889" rx="53.111" ry="53.111"/>
+				<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 34.9007 350.0367)" style="fill:#2072AF;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="439.982" cy="132.889" rx="53.111" ry="53.111"/>
 			
 				<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 34.9007 350.0367)" style="fill:#FFFFFF;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="439.982" cy="132.889" rx="42.531" ry="42.531"/>
 			
-				<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 34.9007 350.0367)" style="fill:#92E3A9;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="439.982" cy="132.889" rx="27.23" ry="27.23"/>
+				<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 34.9007 350.0367)" style="fill:#2072AF;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="439.982" cy="132.889" rx="27.23" ry="27.23"/>
 			
 				<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 34.9007 350.0367)" style="fill:#FFFFFF;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" cx="439.982" cy="132.889" rx="15.389" ry="15.389"/>
 			<path style="fill:#263238;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M446.48,132.889
@@ -274,12 +274,12 @@
 			c1.073,1.036,2.148,1.873,3.172,2.372"/>
 		<path style="fill:none;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M106.67,227.397
 			c0,0,3.224,5.813,7.04,10.463"/>
-		<path style="fill:#92E3A9;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M145.808,188.098
+		<path style="fill:#2072AF;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M145.808,188.098
 			l3.122,8.653l1.423,13.814c0,0,2.147-6.66,2.688-8.993c0.541-2.333-0.881-4.744-0.881-4.744l-1.283-4.929l-0.633,3.168
 			l-3.014-7.092L145.808,188.098z"/>
 		<polygon style="fill:#FFFFFF;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
 			132.286,169.139 129.551,173.482 145.128,191.684 152.869,182.829 		"/>
-		<path style="fill:#92E3A9;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M150.353,210.566
+		<path style="fill:#2072AF;stroke:#263238;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M150.353,210.566
 			c0,0-12.406,29.314-14.661,34.414c-2.256,5.099-8.22,13.166-8.22,13.166l0.542,10.338l10.863-6.537c0,0,7.431-20.012,9.531-32.59
 			C150.508,216.778,150.353,210.566,150.353,210.566z"/>
 		<g>

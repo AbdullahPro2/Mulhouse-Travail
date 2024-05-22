@@ -3,7 +3,7 @@ import heroItemImg from '../../assets/heroSection/hero1Image.jpg';
 import { NavLink } from 'react-router-dom';
 function HeroItem1() {
   return (
-    <div className="flex h-[280px] justify-between bg-[#c7dbf7] sm:h-[370px]  md:h-[470px]  ">
+    <div className="flex h-[280px] justify-between bg-gradient-to-r from-[#c7dbf7] to-[#89abdc] sm:h-[370px]  md:h-[470px]  ">
       <div className="my-auto flex flex-col gap-2 pl-2 sm:max-w-[50%] sm:gap-3 sm:px-3 md:gap-4 lg:px-5 xl:gap-6 xl:px-8">
         <h1 className="text-base uppercase tracking-[9%]  xs:text-lg sm:text-xl lg:text-2xl xl:text-4xl">
           Ensemble, trouvons

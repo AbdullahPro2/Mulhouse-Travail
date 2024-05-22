@@ -7,7 +7,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 function Signup() {
   const [date, setDate] = useState(new Date());
   return (
-    <div className=" mx-auto my-auto w-full max-w-sm rounded bg-green-100 md:max-w-md">
+    <div className=" mx-auto my-auto w-full max-w-sm rounded bg-blue-100 md:max-w-md">
       <form className=" mb-4 rounded px-8 pb-8 pt-6 shadow-md">
         <div className=" flex gap-2">
           <FormRow label="prénom">
@@ -101,7 +101,7 @@ function Signup() {
         <NavLink to="">
           <button
             type="submit"
-            className="mt-8 block w-full bg-teal-950 px-4 py-2 text-white "
+            className="mt-8 block w-full bg-[#1b64ac] px-4 py-2 text-white "
           >
             Conntectez
           </button>
@@ -109,7 +109,7 @@ function Signup() {
         <div className="mt-8 text-center">
           <p>Vous avez déjà un compte ?</p>
           <NavLink to="/login">
-            <h4 className="text-green-700">connectez vous</h4>
+            <h4 className="text-[#003262]">connectez vous</h4>
           </NavLink>
         </div>
       </form>
