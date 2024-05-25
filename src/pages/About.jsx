@@ -51,19 +51,30 @@ function About() {
             alt="Abdullah's profile picture"
             className="mx-auto mb-5 rounded-full shadow-lg md:h-96 md:w-96 lg:h-[35rem] lg:w-[30rem] "
           />
-          <p className="mb-5 text-justify text-lg leading-relaxed md:max-w-[50%]">
+          <div className="mb-5 text-justify text-lg leading-relaxed md:max-w-[50%]">
             <h2 className="mb-4 text-2xl font-black tracking-widest text-[#1b64ac]">
               QUi SUIS_JE &darr;
             </h2>
-            Je m'appelle Abdullah, fondateur de Mulhouse Travail. En tant
-            qu'étudiant et chercheur d'emploi à Mulhouse, j'ai remarqué que les
-            autres sites web où nous pouvions trouver des emplois étaient un peu
-            difficiles à utiliser pour de nombreux utilisateurs d'après mon
-            expérience. C'est de là que m'est venue l'idée de créer un site web
-            convivial, que tout le monde pourrait utiliser, naviguer et trouver
-            l'emploi de ses rêves. Depuis 2024, nous avons accompli cela et
-            continuerons à le faire pour les habitants de Mulhouse.
-          </p>
+            <div>
+              <p>
+                Je m'appelle Abdullah, fondateur de Mulhouse Travail. En tant
+                qu'étudiant et chercheur d'emploi à Mulhouse, j'ai remarqué que
+                les autres sites web où nous pouvions trouver des emplois
+                étaient un peu difficiles à utiliser pour de nombreux
+                utilisateurs d'après mon expérience. C'est de là que m'est venue
+                l'idée de créer un site web convivial, que tout le monde
+                pourrait utiliser, naviguer et trouver l'emploi de ses rêves.
+                Depuis 2024, nous avons accompli cela et continuerons à le faire
+                pour les habitants de Mulhouse.
+              </p>
+              <button
+                type="submit"
+                className="send-message mt-4 w-full cursor-pointer rounded border-0 bg-[#1b64ac] px-4 py-2 text-center font-normal leading-loose text-teal-50 md:text-lg lg:mt-16"
+              >
+                Contactez moi
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

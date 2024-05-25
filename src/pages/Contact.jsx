@@ -14,18 +14,22 @@ function Contact() {
         <div className="md:max-w-1/2 md:space-y-10">
           <ContactingItem
             img={email}
-            text="Our Service is always in your disponibility"
+            text="Notre service est toujours à votre dispositiony"
           >
             <span className="cursor-pointer font-semibold text-[#1b64ac]">
               mulhouse@travail.fr
             </span>
           </ContactingItem>
-          <ContactingItem img={phone} text="You can call us">
+          <ContactingItem img={phone} text="Vous pouvez nous appeler">
             <span className="cursor-pointer font-semibold text-[#1b64ac]">
-              lundi - jeudi 8:00h - 17:00h <br /> vendredi 8:00h - 12:00 h
+              lundi - Jeudi 8:00h - 17:00h <br /> Vendredi 8:00h - 12:00 h
+              <br /> Samedi Dimanche - Fermé
             </span>
           </ContactingItem>
-          <ContactingItem img={location} text=" We would love to meet you.">
+          <ContactingItem
+            img={location}
+            text="Nous serions ravis de vous rencontrer"
+          >
             <span className="cursor-pointer font-semibold text-[#1b64ac]">
               7 Rue de meurette 67200, Mulhouse
             </span>
@@ -77,7 +81,7 @@ function Contact() {
               type="submit"
               className="send-message mt-4 w-full cursor-pointer rounded border-0 bg-[#1b64ac] px-4 py-2 text-center font-normal leading-loose text-teal-50 md:text-lg lg:mt-16"
             >
-              Send Message
+              envoyer message
             </button>
           </form>
         </div>
