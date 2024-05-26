@@ -85,7 +85,7 @@ function Statistics() {
           height={250}
           className="relative mb-36"
         >
-          <h2 className="text-center text-lg font-black tracking-widest ">
+          <h2 className="text-center text-lg font-black tracking-widest text-blue-900 ">
             Nombre de project par ville
           </h2>
           <PieChart>
@@ -93,8 +93,8 @@ function Statistics() {
               data={data}
               nameKey="label"
               dataKey="value"
-              innerRadius={75}
-              outerRadius={110}
+              innerRadius={55}
+              outerRadius={80}
               paddingAngle={2}
             >
               {data.map((entry, index) => (
@@ -119,7 +119,7 @@ function Statistics() {
           height={250}
           className="relative mt-80  xs:mt-52   lg:mt-0"
         >
-          <h2 className=" text-center text-lg font-black tracking-widest ">
+          <h2 className=" text-center text-lg font-black tracking-widest text-blue-900">
             Difficultés à Recruter
           </h2>
           <PieChart>
@@ -127,8 +127,8 @@ function Statistics() {
               data={difficultiesData}
               nameKey="label"
               dataKey="value"
-              innerRadius={75}
-              outerRadius={110}
+              innerRadius={55}
+              outerRadius={80}
               paddingAngle={2}
             >
               {difficultiesData.map((entry) => (
@@ -146,7 +146,7 @@ function Statistics() {
           height={250}
           className="relative mt-20 lg:mt-0"
         >
-          <h2 className="text-center text-lg font-black tracking-widest ">
+          <h2 className="text-center text-lg font-black tracking-widest text-blue-900">
             Emplois Saisonniers
           </h2>
           <PieChart>
@@ -154,8 +154,8 @@ function Statistics() {
               data={seasonalData}
               nameKey="label"
               dataKey="value"
-              innerRadius={75}
-              outerRadius={110}
+              innerRadius={55}
+              outerRadius={80}
               paddingAngle={2}
             >
               {seasonalData.map((entry) => (

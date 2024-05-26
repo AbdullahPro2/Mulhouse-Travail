@@ -1,12 +1,22 @@
 import React from 'react';
 
-function ListItem({ text }) {
+function ListItem({ text, nom }) {
+  const handleClickScroll = () => {
+    const element = document.getElementById(nom);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <li className="flex items-center font-extralight text-[#1b64ac] md:text-lg xl:text-xl">
-      <span className="absolute -left-[11px] text-5xl text-[#1b64ac] md:-left-[12.5px] md:text-6xl xl:-left-[15.5px] xl:text-7xl">
+    <li
+      className="relative flex cursor-pointer items-center font-light text-blue-700 md:text-lg xl:text-xl"
+      onClick={handleClickScroll}
+    >
+      <span className="absolute -left-[27.2px] text-5xl text-blue-500 md:-left-[29px] md:text-6xl xl:-left-8 xl:text-7xl">
         •
-      </span>{' '}
-      {text}
+      </span>
+      <span className="ml-8">{text}</span>
     </li>
   );
 }
