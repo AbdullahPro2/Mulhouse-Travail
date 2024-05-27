@@ -6,12 +6,18 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Controller, useForm } from 'react-hook-form';
 import dayjs from 'dayjs';
+import { insertUserData, signUpNewUser } from './authentication';
 function Signup() {
-  const { date, setDate } = useState('');
   const { register, control, handleSubmit } = useForm();
 
-  function onSubmit(data) {
-    console.log(data);
+  function onSubmit(userData) {
+    console.log(userData);
+    const confirmation = signUpNewUser(userData.email, userData.password);
+    confirmation.then((data) => {
+      const userDataWithUid = { ...userData, userUID: data.user.id };
+      const inserted = insertUserData(userDataWithUid);
+      console.log(inserted);
+    });
   }
   return (
     <div className=" mx-auto my-auto w-full max-w-sm rounded bg-blue-100 md:max-w-md">
@@ -23,24 +29,24 @@ function Signup() {
           <FormRow label="prénom">
             <input
               type="text"
-              id="prenom"
+              id="firstName"
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-              {...register('prenom')}
+              {...register('firstName')}
             />
           </FormRow>
           <FormRow label="Nom">
             <input
               type="text"
-              id="nom"
+              id="familyName"
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-              {...register('nom')}
+              {...register('familyName')}
             />
           </FormRow>
         </div>
         <FormRow label="Date de naissance ">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <Controller
-              name="dob"
+              name="dateOfBirth"
               control={control}
               render={({ field: { onChange, value } }) => (
                 <DatePicker
@@ -91,26 +97,26 @@ function Signup() {
         <FormRow label="Adresse">
           <input
             type="text"
-            id="adress"
+            id="address"
             className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-            {...register('adress')}
+            {...register('address')}
           />
         </FormRow>
         <div className="flex gap-2">
           <FormRow label="Code Postal">
             <input
               type="tel"
-              id="postal"
+              id="postalCode"
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-              {...register('postal')}
+              {...register('postalCode')}
             />
           </FormRow>
           <FormRow label="Ville">
             <input
               type="text"
-              id="ville"
+              id="city"
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-              {...register('ville')}
+              {...register('city')}
             />
           </FormRow>
         </div>

@@ -9,6 +9,7 @@ function Login() {
 
   function loginUser() {
     const data = login(email, password);
+    console.log(data.then((data) => console.log(data)));
   }
   return (
     <div className=" mx-auto my-auto w-full max-w-sm rounded bg-blue-100 md:max-w-md  ">
