@@ -16,7 +16,7 @@ function Signup() {
     confirmation.then((data) => {
       const userDataWithUid = { ...userData, userUID: data.user.id };
       const inserted = insertUserData(userDataWithUid);
-      console.log(inserted);
+      console.log(inserted.then((data) => console.log(data)));
     });
   }
   return (
