@@ -36,4 +36,18 @@ export async function insertUserData(userData) {
   if (error) {
     console.log(error);
   }
+  return data;
+}
+
+// Get user with Filtering
+
+export async function getUserWithUid(userUID) {
+  let { data, error } = await supabase
+    .from('users')
+    .select('*')
+    .eq('userUID', userUID);
+
+  if (error) console.log(error);
+
+  return data;
 }

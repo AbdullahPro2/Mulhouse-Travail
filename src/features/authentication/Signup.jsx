@@ -7,16 +7,18 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Controller, useForm } from 'react-hook-form';
 import dayjs from 'dayjs';
 import { insertUserData, signUpNewUser } from './authentication';
+
 function Signup() {
   const { register, control, handleSubmit } = useForm();
 
   function onSubmit(userData) {
-    console.log(userData);
+    console.log('New User Data: ', userData);
     const confirmation = signUpNewUser(userData.email, userData.password);
     confirmation.then((data) => {
       const userDataWithUid = { ...userData, userUID: data.user.id };
-      const inserted = insertUserData(userDataWithUid);
-      console.log(inserted.then((data) => console.log(data)));
+      insertUserData(userDataWithUid).then((data) =>
+        console.log('User Added successfully: ', data),
+      );
     });
   }
   return (

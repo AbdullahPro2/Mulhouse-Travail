@@ -1,16 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import FormRow from './FormRow';
 import { NavLink } from 'react-router-dom';
-import { login } from './authentication';
+import { getUserWithUid, login } from './authentication';
+
+import { useDispatch } from 'react-redux';
+import { createUser } from './AuthSlice';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   function loginUser() {
-    const data = login(email, password);
-    console.log(data.then((data) => console.log(data)));
+    login(email, password).then((data) => {
+      console.log('first', data);
+      getUserWithUid(data.user.id).then((userData) => {
+        console.log('second', userData);
+        dispatch(
+          createUser(
+            userData[0].firstName,
+            userData[0].familyName,
+            userData[0].email,
+            userData[0].password,
+            userData[0].address,
+            userData[0].postalCode,
+            userData[0].city,
+            userData[0].nationality,
+            userData[0].phoneNumber,
+            userData[0].dateOfBirth,
+          ),
+        );
+      });
+    });
   }
+
   return (
     <div className=" mx-auto my-auto w-full max-w-sm rounded bg-blue-100 md:max-w-md  ">
       <form className=" mb-4 rounded px-8 pb-8 pt-6 shadow-md">

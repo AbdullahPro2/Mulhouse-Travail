@@ -45,24 +45,21 @@
   padding: 8px !important;
 }
 
-/* .cv-page {
-  background-image: url('/src/assets/CVSection/CVBanner.svg');
-  background-position: center;
-  background-size: cover;
-} */
-/* <div className="relativ cv-page flex w-full justify-center md:h-[500px]">
-        <div className=" my-auto flex flex-col items-center justify-center space-y-3 p-6 text-white">
-          <h1 className="mb-4 text-center text-xl font-bold md:text-4xl">
-            Créez votre CV professionnel avec facilité
-          </h1>
-          <p className="mb-8 max-w-2xl text-justify text-xs md:text-lg xl:text-xl">
-            Découvrez des astuces et des conseils pour créer un CV remarquable
-            qui attire l'attention des employeurs potentiels. De la mise en
-            forme au contenu, nous vous guidons à chaque étape.
-          </p>
+/* Spinner */
 
-          {/* <button className="rounded-[100px] bg-[linear-gradient(94.29deg,#3FB9DF_7.7%,#374AF4_98.45%)] px-4 py-2  font-semibold shadow-[0px_8px_16px_rgba(0,0,0,0.15)] md:px-10 md:py-5 md:text-lg xl:text-xl">
-            Discutons
-          </button> */
-/* </div> */
-/* </div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(farthest-side, #1b64ac 94%, #0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%, #1b64ac);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
+}

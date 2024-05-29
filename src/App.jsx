@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
 import AppLayout from './layout/AppLayout';
 import Home from '/src/pages/Home';
 import Settings from './pages/Settings';
@@ -13,6 +14,17 @@ import Login from './features/authentication/Login';
 import Signup from './features/authentication/Signup';
 import CV from './pages/CV';
 import Thankyou from './components/contact/Thankyou';
+import { Provider } from 'react-redux';
+import store from './store';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
+});
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -71,7 +83,14 @@ function App() {
   router.subscribe((location) => {
     window.scrollTo(0, 0);
   });
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </QueryClientProvider>
+  );
 }
 
 export default App;
