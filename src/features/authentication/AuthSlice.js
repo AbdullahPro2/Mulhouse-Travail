@@ -58,8 +58,20 @@ const authSlice = createSlice({
         state.dateOfBirth = action.payload.dateOfBirth;
       },
     },
+    logOutUser(state, payload) {
+      state.firstName = '';
+      state.familyName = '';
+      state.email = '';
+      state.password = '';
+      state.address = '';
+      state.postalCode = '';
+      state.city = '';
+      state.nationality = '';
+      state.phoneNumber = '';
+      state.dateOfBirth = '';
+    },
   },
 });
 
-export const { createUser } = authSlice.actions;
+export const { createUser, logOutUser } = authSlice.actions;
 export default authSlice.reducer;

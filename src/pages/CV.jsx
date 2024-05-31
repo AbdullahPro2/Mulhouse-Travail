@@ -112,7 +112,7 @@ function CV() {
                 vous êtes et comment vous joindre.
               </p>
             </CvItem>
-            <CvItem heading="6. Langues" nom="language">
+            <CvItem heading="7. Langues" nom="language">
               <p className="text-justify">
                 Vous pouvez inclure des langues que vous parlez. Cela vous
                 donnera des points supplémentaires par rapport aux autres
@@ -120,7 +120,7 @@ function CV() {
                 inclure le niveau dans cette langue particulière.
               </p>
             </CvItem>
-            <CvItem heading="7. Atouts" nom="Atouts">
+            <CvItem heading="8. Atouts" nom="Atouts">
               <p className="text-justify">
                 Il s'agit d'une section concise mais qui peut très bien
                 fonctionner pour vous comprendre. Cela donnera à votre employeur
@@ -132,7 +132,7 @@ function CV() {
                 <li>• Flexibilité</li>
               </ul>
             </CvItem>
-            <CvItem heading="8. réseaux sociaux" nom="sociaux">
+            <CvItem heading="9. réseaux sociaux" nom="sociaux">
               <p className="text-justify">
                 Il s'agit d'une section de liens externes vers vos profils qui
                 aideront votre employeur à voir votre travail pratique, comme

@@ -11,18 +11,23 @@ import { insertUserData, signUpNewUser } from './authentication';
 function Signup() {
   const { register, control, handleSubmit } = useForm();
 
-  function onSubmit(userData) {
-    console.log('New User Data: ', userData);
-    const confirmation = signUpNewUser(userData.email, userData.password);
-    confirmation.then((data) => {
-      const userDataWithUid = { ...userData, userUID: data.user.id };
+  async function onSubmit(userData) {
+    try {
+      console.log('New User Data: ', userData);
+      const confirmation = signUpNewUser(userData.email, userData.password);
+      console.log(confirmation);
+      const userId = (await confirmation).user.id;
+      const userDataWithUid = { ...userData, userUID: userId };
+
       insertUserData(userDataWithUid).then((data) =>
         console.log('User Added successfully: ', data),
       );
-    });
+    } catch (error) {
+      console.error('Error during user sign-up', error);
+    }
   }
   return (
-    <div className=" mx-auto my-auto w-full max-w-sm rounded bg-blue-100 md:max-w-md">
+    <div className="mx-auto my-auto w-full max-w-sm rounded bg-blue-100 md:max-w-md">
       <form
         className=" mb-4 rounded px-8 pb-8 pt-6 shadow-md"
         onSubmit={handleSubmit(onSubmit)}
