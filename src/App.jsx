@@ -16,6 +16,7 @@ import CV from './pages/CV';
 import Thankyou from './components/contact/Thankyou';
 import { Provider } from 'react-redux';
 import store from './store';
+import Job from './features/jobs/Job';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,8 +36,9 @@ function App() {
           element: <Home />,
         },
         {
-          path: '/jobs',
+          path: 'jobs',
           element: <Jobs />,
+          children: [{ path: ':id', element: <Job /> }],
         },
         {
           path: '/postjob',
@@ -85,7 +87,7 @@ function App() {
   });
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <ReactQueryDevtools initialIsOpen={true} /> */}
+      <ReactQueryDevtools initialIsOpen={true} />
       <Provider store={store}>
         <RouterProvider router={router} />
       </Provider>

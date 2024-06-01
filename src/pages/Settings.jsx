@@ -14,7 +14,7 @@ function Settings() {
 
   async function handleUpdateUser() {
     try {
-      const data = await updateAuthUser('zeb16208@gmail.com', '12345678');
+      const data = await updateAuthUser('test2@gmail.com');
       console.log(data);
     } catch (error) {
       console.error('Error updating user:', error);
