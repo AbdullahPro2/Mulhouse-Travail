@@ -53,13 +53,14 @@ export async function getUserWithUid(userUID) {
 }
 
 // Update user
-export async function updateAuthUser(email) {
-  const { data, error } = await supabase.auth.updateUser({
-    email: email,
-  });
+// export async function updateAuthUser(email) {
+//   const { data, error } = await supabase.auth.updateUser({
+//     email: 'syed94908@gmail.com',
+//     password: '987654321',
+//   });
 
-  if (error) {
-    console.log(error);
-  }
-  return data;
-}
+//   if (error) {
+//     console.log(error);
+//   }
+//   return data;
+// }

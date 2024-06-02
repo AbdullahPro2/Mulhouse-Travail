@@ -25,7 +25,6 @@ function JobItem({
     return daysDifference;
   }
   const dateSinceCreated = calculateDaysSinceCreated(created_at);
-  console.log(id);
   return (
     <NavLink to={`/jobs/${id}`} onClick={() => onSetSelectedJob(true)}>
       <div className="my-4 max-w-sm overflow-hidden  rounded-lg bg-white shadow-2xl">
@@ -52,30 +51,6 @@ function JobItem({
               {dateSinceCreated == '0' ? '1' : dateSinceCreated} jour
             </p>
           </div>
-
-          {/* <p className="mt-4 text-base text-gray-700">{description}</p>
-
-<div className="mb-2 text-sm text-gray-600">
-<span className="font-semibold">Type de contrat :</span>{' '}
-{contractType}
-</div>
-
-<div className="mb-2 text-sm text-gray-600">
-<span className="font-semibold">Temps de travail :</span> {workTime}
-</div>
-<div className="mb-2 text-sm text-gray-600">
-<span className="font-semibold">Profil du candidat :</span>{' '}
-{candidateProfile}
-</div>
-<div className="mb-2 text-sm text-gray-600">
-<span className="font-semibold">Qualités du candidat :</span>{' '}
-{candidateQualities}
-</div>
-
-<div className="mb-4 text-sm text-gray-600">
-<span className="font-semibold">Description de l'entreprise :</span>{' '}
-{companyDescription}
-</div> */}
         </div>
       </div>
     </NavLink>

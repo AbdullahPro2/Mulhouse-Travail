@@ -3,6 +3,7 @@ import mulhouseCover from '../assets/about/mulhouse.jpg';
 import peoples from '../assets/about/people.jpg';
 import profile from '../assets/about/profile3.jpg';
 import PageHeading from '../layout/PageHeading';
+import { NavLink } from 'react-router-dom';
 function About() {
   return (
     <div className="container mx-auto px-4 ">
@@ -67,12 +68,14 @@ function About() {
                 Depuis 2024, nous avons accompli cela et continuerons à le faire
                 pour les habitants de Mulhouse.
               </p>
-              <button
-                type="submit"
-                className="send-message mt-4 w-full cursor-pointer rounded border-0 bg-[#1b64ac] px-4 py-2 text-center font-normal leading-loose text-teal-50 md:text-lg lg:mt-16"
-              >
-                Contactez moi
-              </button>
+              <NavLink to="/contact">
+                <button
+                  type="submit"
+                  className="send-message mt-4 w-full cursor-pointer rounded border-0 bg-[#1b64ac] px-4 py-2 text-center font-normal leading-loose text-teal-50 md:text-lg lg:mt-16"
+                >
+                  Contactez moi
+                </button>
+              </NavLink>
             </div>
           </div>
         </div>

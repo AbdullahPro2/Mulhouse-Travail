@@ -55,7 +55,7 @@ function List({ isOpen, setIsOpen }) {
           setIsOpen={setIsOpen}
           delayClose="700"
         />
-        <ListItem
+        {/* <ListItem
           to="/your-applications"
           list="Vos candidatures"
           icon={appliedJobsIcon}
@@ -63,7 +63,7 @@ function List({ isOpen, setIsOpen }) {
           delay="600"
           setIsOpen={setIsOpen}
           delayClose="600"
-        />
+        /> */}
         <ListItem
           to="/settings"
           list="Paramètres"

@@ -13,7 +13,7 @@ function Jobs() {
     data: jobs,
     error,
   } = useQuery({
-    queryKey: ['job'],
+    queryKey: ['jobs'],
     queryFn: getJobs,
   });
 
@@ -31,7 +31,7 @@ function Jobs() {
   return (
     <div className="p-5">
       <PageHeading text="Offres D'emploi " />
-      <div className="md:flex">
+      <div className="gap-10 md:flex md:justify-between">
         <div>
           {(selectedJob && isMobile) === false
             ? jobs.map((job) => (
