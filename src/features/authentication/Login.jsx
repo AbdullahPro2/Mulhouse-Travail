@@ -13,24 +13,24 @@ function Login() {
 
   function loginUser() {
     login(email, password).then((data) => {
-      console.log('first', data);
-      getUserWithUid(data.user.id).then((userData) => {
-        console.log('second', userData);
-        dispatch(
-          createUser(
-            userData[0].firstName,
-            userData[0].familyName,
-            userData[0].email,
-            userData[0].password,
-            userData[0].address,
-            userData[0].postalCode,
-            userData[0].city,
-            userData[0].nationality,
-            userData[0].phoneNumber,
-            userData[0].dateOfBirth,
-          ),
-        );
-      });
+      console.log('first, user logged In', data);
+      // getUserWithUid(data.user.id).then((userData) => {
+      //   console.log('second', userData);
+      //   dispatch(
+      //     createUser(
+      //       userData[0].firstName,
+      //       userData[0].familyName,
+      //       userData[0].email,
+      //       userData[0].password,
+      //       userData[0].address,
+      //       userData[0].postalCode,
+      //       userData[0].city,
+      //       userData[0].nationality,
+      //       userData[0].phoneNumber,
+      //       userData[0].dateOfBirth,
+      //     ),
+      //   );
+      // });
     });
   }
 

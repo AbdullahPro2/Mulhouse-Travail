@@ -14,10 +14,13 @@ export async function login(email, password) {
 
 // SIGNUP
 
-export async function signUpNewUser(email, password) {
+export async function signUpNewUser(email, password, userDetails) {
   let { data, error } = await supabase.auth.signUp({
     email: email,
     password: password,
+    options: {
+      data: userDetails,
+    },
   });
   if (error) {
     console.log(error);
@@ -53,14 +56,14 @@ export async function getUserWithUid(userUID) {
 }
 
 // Update user
-// export async function updateAuthUser(email) {
-//   const { data, error } = await supabase.auth.updateUser({
-//     email: 'syed94908@gmail.com',
-//     password: '987654321',
-//   });
+export async function updateAuthUser(email, password) {
+  const { data, error } = await supabase.auth.updateUser({
+    email: email,
+    password: password,
+  });
 
-//   if (error) {
-//     console.log(error);
-//   }
-//   return data;
-// }
+  if (error) {
+    console.log(error);
+  }
+  return data;
+}

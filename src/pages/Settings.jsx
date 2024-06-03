@@ -4,7 +4,7 @@ import PageHeading from '../layout/PageHeading';
 import editIcon from '../assets/setting/edit.png';
 import SettingItem from '../components/setting/SettingItem';
 import NoUserMessage from '../components/setting/NoUserMessage';
-// import { updateAuthUser } from '../features/authentication/authentication';
+import { updateAuthUser } from '../features/authentication/authentication';
 
 function Settings() {
   const user = useSelector((store) => store.user);
@@ -12,14 +12,14 @@ function Settings() {
 
   if (user.familyName == '') return <NoUserMessage />;
 
-  // async function handleUpdateUser() {
-  //   try {
-  //     const data = await updateAuthUser('zeb16208@gmail.com');
-  //     console.log(data);
-  //   } catch (error) {
-  //     console.error('Error updating user:', error);
-  //   }
-  // }
+  async function handleUpdateUser() {
+    try {
+      const data = await updateAuthUser('zeb16208@gmail.com', '123456789');
+      console.log(data);
+    } catch (error) {
+      console.error('Error updating user:', error);
+    }
+  }
 
   return (
     <div className="overflow-hidden p-4">
@@ -27,13 +27,13 @@ function Settings() {
       <div className="mb-4 rounded-lg border-2 border-gray-200 p-4">
         <div className="mb-4 flex justify-between">
           <h2 className="font-medium md:text-lg">Personal Information</h2>
-          {/* <button
+          <button
             className="flex items-center justify-center gap-2"
             aria-label="Edit Personal Information"
             onClick={handleUpdateUser}
           >
             Edit <img src={editIcon} className="w-4" alt="Edit icon" />
-          </button> */}
+          </button>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <SettingItem
@@ -66,9 +66,9 @@ function Settings() {
       <div className="mb-4 rounded-lg border-2 border-gray-200 p-4">
         <div className="mb-4 flex justify-between">
           <h2 className="font-medium">Adresse</h2>
-          {/* <button className="flex items-center gap-2" aria-label="Edit Address">
+          <button className="flex items-center gap-2" aria-label="Edit Address">
             Edit <img src={editIcon} className="w-4" alt="Edit icon" />
-          </button> */}
+          </button>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <SettingItem
@@ -88,12 +88,12 @@ function Settings() {
       <div className="rounded-lg border-2 border-gray-200 p-4">
         <div className="mb-4 flex justify-between">
           <h2 className="font-medium">Sécurité</h2>
-          {/* <button
+          <button
             className="flex items-center gap-2"
             aria-label="Edit Security"
           >
             Edit <img src={editIcon} className="w-4" alt="Edit icon" />
-          </button> */}
+          </button>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <SettingItem

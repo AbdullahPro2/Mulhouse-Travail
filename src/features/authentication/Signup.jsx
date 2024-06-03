@@ -13,15 +13,20 @@ function Signup() {
 
   async function onSubmit(userData) {
     try {
-      console.log('New User Data: ', userData);
-      const confirmation = signUpNewUser(userData.email, userData.password);
-      console.log(confirmation);
-      const userId = (await confirmation).user.id;
-      const userDataWithUid = { ...userData, userUID: userId };
-
-      insertUserData(userDataWithUid).then((data) =>
-        console.log('User Added successfully: ', data),
+      // console.log('New User Data: ', userData);
+      const confirmation = signUpNewUser(
+        userData.email,
+        userData.password,
+        userData,
       );
+      console.log(confirmation);
+
+      // const userId = (await confirmation).user.id;
+      // const userDataWithUid = { ...userData, userUID: userId };
+
+      // insertUserData(userDataWithUid).then((data) =>
+      //   console.log('User Added successfully: ', data),
+      // );
     } catch (error) {
       console.error('Error during user sign-up', error);
     }
