@@ -14,22 +14,22 @@ function Login() {
   function loginUser() {
     login(email, password).then((data) => {
       console.log('first, user logged In', data);
+      console.log('second : ', data.user.user_metadata);
       // getUserWithUid(data.user.id).then((userData) => {
-      //   console.log('second', userData);
-      //   dispatch(
-      //     createUser(
-      //       userData[0].firstName,
-      //       userData[0].familyName,
-      //       userData[0].email,
-      //       userData[0].password,
-      //       userData[0].address,
-      //       userData[0].postalCode,
-      //       userData[0].city,
-      //       userData[0].nationality,
-      //       userData[0].phoneNumber,
-      //       userData[0].dateOfBirth,
-      //     ),
-      //   );
+      dispatch(
+        createUser(
+          data.user.user_metadata.firstName,
+          data.user.user_metadata.familyName,
+          data.user.user_metadata.email,
+          data.user.user_metadata.password,
+          data.user.user_metadata.address,
+          data.user.user_metadata.postalCode,
+          data.user.user_metadata.city,
+          data.user.user_metadata.nationality,
+          data.user.user_metadata.phoneNumber,
+          data.user.user_metadata.dateOfBirth,
+        ),
+      );
       // });
     });
   }
