@@ -15,17 +15,23 @@ export async function login(email, password) {
 // SIGNUP
 
 export async function signUpNewUser(email, password, userDetails) {
-  let { data, error } = await supabase.auth.signUp({
-    email: email,
-    password: password,
-    options: {
-      data: userDetails,
-    },
-  });
-  if (error) {
-    console.log(error);
+  try {
+    let { data, error } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+      options: {
+        data: userDetails,
+        emailRedirectTo: 'http://localhost:5173/login',
+      },
+    });
+    if (error) {
+      throw error; // Throw the error to be caught in the catch block
+    }
+    return data;
+  } catch (error) {
+    console.error('Error during sign-up:', error);
+    return { error };
   }
-  return data;
 }
 
 // ADD USER DATA
