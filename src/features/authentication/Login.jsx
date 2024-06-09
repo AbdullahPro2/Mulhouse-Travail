@@ -1,79 +1,101 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import FormRow from './FormRow';
-import { NavLink } from 'react-router-dom';
-import { getUserWithUid, login } from './authentication';
-
-import { useDispatch } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { login } from './authentication';
+import { useDispatch, useSelector } from 'react-redux';
 import { createUser } from './AuthSlice';
+import MessageTopup from '../../layout/MessageTopup';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
+  const [type, setType] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  function loginUser() {
-    login(email, password).then((data) => {
-      console.log('first, user logged In', data);
-      console.log('second : ', data.user.user_metadata);
-      // getUserWithUid(data.user.id).then((userData) => {
+  async function loginUser() {
+    const confirmation = await login(email, password);
+    // getUserWithUid(data.user.id).then((userData) => {
+    if (confirmation.error) {
+      console.log(confirmation.error.message);
+      setType(confirmation.error.message);
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 2000);
+    } else if (confirmation.user.id) {
       dispatch(
         createUser(
-          data.user.user_metadata.firstName,
-          data.user.user_metadata.familyName,
-          data.user.user_metadata.email,
-          data.user.user_metadata.password,
-          data.user.user_metadata.address,
-          data.user.user_metadata.postalCode,
-          data.user.user_metadata.city,
-          data.user.user_metadata.nationality,
-          data.user.user_metadata.phoneNumber,
-          data.user.user_metadata.dateOfBirth,
+          confirmation.user.user_metadata.firstName,
+          confirmation.user.user_metadata.familyName,
+          confirmation.user.user_metadata.email,
+          confirmation.user.user_metadata.password,
+          confirmation.user.user_metadata.address,
+          confirmation.user.user_metadata.postalCode,
+          confirmation.user.user_metadata.city,
+          confirmation.user.user_metadata.nationality,
+          confirmation.user.user_metadata.phoneNumber,
+          confirmation.user.user_metadata.dateOfBirth,
         ),
       );
-      // });
-    });
+      setType('success');
+      navigate('/settings');
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 2000);
+    }
   }
-
+  const user = useSelector((store) => store.user);
   return (
-    <div className=" mx-auto my-auto w-full max-w-sm rounded bg-blue-100 md:max-w-md  ">
-      <form className=" mb-4 rounded px-8 pb-8 pt-6 shadow-md">
-        <FormRow label="Email">
-          <input
-            type="text"
-            id="prenom"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-          />
-        </FormRow>
+    <>
+      {showMessage && (
+        <MessageTopup
+          message={`${user.firstName} a été connecté avec succès `}
+          type={type}
+        />
+      )}
+      <div className=" mx-auto my-auto w-full max-w-sm rounded bg-blue-100 md:max-w-md  ">
+        <form className=" mb-4 rounded px-8 pb-8 pt-6 shadow-md">
+          <FormRow label="Email">
+            <input
+              type="text"
+              id="prenom"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+            />
+          </FormRow>
 
-        <FormRow label="mot de passe">
-          <input
-            value={password}
-            type="password"
-            id="password"
-            className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </FormRow>
+          <FormRow label="mot de passe">
+            <input
+              value={password}
+              type="password"
+              id="password"
+              className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </FormRow>
 
-        <NavLink to="">
-          <button
-            type="submit"
-            className="mt-8 block w-full bg-[#1b64ac] px-4 py-2 text-white "
-            onClick={loginUser}
-          >
-            Conntectez
-          </button>
-        </NavLink>
-        <div className="mt-8 text-center">
-          <p>Première fois? créez votre compte chez nous.</p>
-          <NavLink to="/signup">
-            <h4 className="text-[#003262]">S'inscrire</h4>
+          <NavLink to="">
+            <button
+              type="submit"
+              className="mt-8 block w-full bg-[#1b64ac] px-4 py-2 text-white "
+              onClick={loginUser}
+            >
+              Conntectez
+            </button>
           </NavLink>
-        </div>
-      </form>
-    </div>
+          <div className="mt-8 text-center">
+            <p>Première fois? créez votre compte chez nous.</p>
+            <NavLink to="/signup">
+              <h4 className="text-[#003262]">S'inscrire</h4>
+            </NavLink>
+          </div>
+        </form>
+      </div>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FormRow from './FormRow';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -14,6 +14,7 @@ function Signup() {
   const [showMessage, setShowMessage] = useState(false);
   const [type, setType] = useState('');
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   async function onSubmit(userData) {
     // Check if passwords match
@@ -47,19 +48,20 @@ function Signup() {
         confirmation.user.identities &&
         confirmation.user.identities.length === 0
       ) {
-        setType('User Already register please login');
+        setType('Utilisateur déjà enregistré, veuillez vous connecter');
       } else {
         setType('success');
       }
     } catch (err) {
       // Log any unexpected errors
-      console.log('Unexpected error:', err);
+      console.log('Unprévu erreur:', err);
       setType("Une erreur inattendue s'est produite.");
     } finally {
       // Show the message and hide it after 2 seconds
       setShowMessage(true);
       setTimeout(() => {
         setShowMessage(false);
+        navigate('/');
       }, 2000);
     }
   }

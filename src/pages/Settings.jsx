@@ -8,7 +8,6 @@ import { updateAuthUser } from '../features/authentication/authentication';
 
 function Settings() {
   const user = useSelector((store) => store.user);
-  console.log(user);
 
   if (user.familyName == '') return <NoUserMessage />;
 
