@@ -25,8 +25,8 @@ function Footer() {
         <Link to="/about">
           <li className="cursor-pointer">Découvrez-nous</li>
         </Link>
-        <Link to="/your-applications">
-          <li className="cursor-pointer">Vos candidatures</li>
+        <Link to="/contact">
+          <li className="cursor-pointer">Contactez-nous</li>
         </Link>
         <Link to="/postjob">
           <li className="cursor-pointer">Portail Employeur</li>

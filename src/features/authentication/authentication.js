@@ -71,6 +71,12 @@ export async function updateAuthUser(email, password) {
   const { data, error } = await supabase.auth.updateUser({
     email: email,
     password: password,
+    data: {
+      firstName: 'Ibrahim NOOH',
+      familyName: 'Strasborug',
+      nationality: 'LONDON',
+      email: 'syed94908@gmail.com',
+    },
   });
 
   if (error) {

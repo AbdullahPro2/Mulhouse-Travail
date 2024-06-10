@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import FormRow from './FormRow';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { login } from './authentication';
+import { getUserWithUid, insertUserData, login } from './authentication';
 import { useDispatch, useSelector } from 'react-redux';
 import { createUser } from './AuthSlice';
 import MessageTopup from '../../layout/MessageTopup';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [emailForm, setEmail] = useState('');
+  const [passwordForm, setPassword] = useState('');
   const [showMessage, setShowMessage] = useState(false);
   const [type, setType] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   async function loginUser() {
-    const confirmation = await login(email, password);
-    // getUserWithUid(data.user.id).then((userData) => {
+    const confirmation = await login(emailForm, passwordForm);
     if (confirmation.error) {
       console.log(confirmation.error.message);
       setType(confirmation.error.message);
@@ -24,7 +23,43 @@ function Login() {
       setTimeout(() => {
         setShowMessage(false);
       }, 2000);
-    } else if (confirmation.user.id) {
+    }
+    const {
+      address,
+      city,
+      password,
+      email,
+      familyName,
+      firstName,
+      nationality,
+      phoneNumber,
+      postalCode,
+      dateOfBirth,
+    } = confirmation.user.user_metadata;
+
+    const userData = {
+      address,
+      city,
+      password,
+      email,
+      familyName,
+      firstName,
+      nationality,
+      phoneNumber,
+      postalCode,
+      dateOfBirth,
+      userUID: confirmation.user.id,
+    };
+    console.log(confirmation);
+    const data = await getUserWithUid(confirmation.user.id);
+    console.log('getUserWithUid:', data);
+    const insertingUser = await insertUserData(userData);
+    if (insertingUser.error) {
+      throw new Error(insertingUser.error.message);
+    }
+    console.log(insertingUser);
+    // getUserWithUid(data.user.id).then((userData) => {
+    if (confirmation.user.id) {
       dispatch(
         createUser(
           confirmation.user.user_metadata.firstName,
@@ -62,7 +97,7 @@ function Login() {
             <input
               type="text"
               id="prenom"
-              value={email}
+              value={emailForm}
               onChange={(e) => setEmail(e.target.value)}
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
             />
@@ -70,7 +105,7 @@ function Login() {
 
           <FormRow label="mot de passe">
             <input
-              value={password}
+              value={passwordForm}
               type="password"
               id="password"
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"

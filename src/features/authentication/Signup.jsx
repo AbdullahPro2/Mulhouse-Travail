@@ -43,14 +43,23 @@ function Signup() {
       // Check for errors in the confirmation response
       if (confirmation.error) {
         setType(confirmation.error.message);
+        return null;
       } else if (
         confirmation.user &&
         confirmation.user.identities &&
         confirmation.user.identities.length === 0
       ) {
         setType('Utilisateur déjà enregistré, veuillez vous connecter');
+        setTimeout(() => {
+          setShowMessage(false);
+          navigate('/login');
+        }, 2000);
       } else {
         setType('success');
+        setTimeout(() => {
+          setShowMessage(false);
+          navigate('/');
+        }, 2000);
       }
     } catch (err) {
       // Log any unexpected errors
@@ -61,7 +70,6 @@ function Signup() {
       setShowMessage(true);
       setTimeout(() => {
         setShowMessage(false);
-        navigate('/');
       }, 2000);
     }
   }

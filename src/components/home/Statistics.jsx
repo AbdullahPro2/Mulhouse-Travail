@@ -79,6 +79,7 @@ function Statistics() {
   return (
     <div className="my-10 px-4">
       <PageHeading text="BMO" />
+
       <div className="my-10 xl:flex ">
         <ResponsiveContainer
           width="100%"

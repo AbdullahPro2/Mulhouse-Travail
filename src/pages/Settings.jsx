@@ -13,7 +13,7 @@ function Settings() {
 
   async function handleUpdateUser() {
     try {
-      const data = await updateAuthUser('zeb16208@gmail.com', '123456789');
+      const data = await updateAuthUser('syed94908@gmail.com', '123456');
       console.log(data);
     } catch (error) {
       console.error('Error updating user:', error);
@@ -35,30 +35,21 @@ function Settings() {
           </button>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <SettingItem
-            upperText="Prénom"
-            lowerText={user.firstName || 'Abdullah'}
-          />
-          <SettingItem
-            upperText="Nom"
-            lowerText={user.familyName || 'Nezami'}
-          />
+          <SettingItem upperText="Prénom" lowerText={user.firstName} />
+          <SettingItem upperText="Nom" lowerText={user.familyName} />
         </div>
         <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
           <SettingItem
             upperText="Date de naissance"
-            lowerText={user.dateOfBirth || '15/08/2005'}
+            lowerText={user.dateOfBirth}
           />
           <SettingItem upperText="Age" lowerText={user.age || '18'} />
         </div>
         <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-          <SettingItem
-            upperText="Nationalité"
-            lowerText={user.nationality || 'Afghan'}
-          />
+          <SettingItem upperText="Nationalité" lowerText={user.nationality} />
           <SettingItem
             upperText="Numéro téléphone"
-            lowerText={user.phoneNumber || '18 218 181 8181'}
+            lowerText={user.phoneNumber}
           />
         </div>
       </div>
@@ -72,16 +63,13 @@ function Settings() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <SettingItem
             upperText="Numéro de Rue"
-            lowerText={user.streetNumber || '7'}
+            lowerText={user.streetNumber}
           />
-          <SettingItem upperText="Rue" lowerText={user.street || 'Fabriques'} />
+          <SettingItem upperText="Rue" lowerText={user.street} />
         </div>
         <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-          <SettingItem
-            upperText="Code Postal"
-            lowerText={user.postalCode || '68 200'}
-          />
-          <SettingItem upperText="Ville" lowerText={user.city || 'Mulhouse'} />
+          <SettingItem upperText="Code Postal" lowerText={user.postalCode} />
+          <SettingItem upperText="Ville" lowerText={user.city} />
         </div>
       </div>
       <div className="rounded-lg border-2 border-gray-200 p-4">
@@ -95,10 +83,7 @@ function Settings() {
           </button>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <SettingItem
-            upperText="Email"
-            lowerText={user.email || 'test168@gmail.com'}
-          />
+          <SettingItem upperText="Email" lowerText={user.email} />
           <SettingItem upperText="Password" lowerText="*********" />
         </div>
       </div>

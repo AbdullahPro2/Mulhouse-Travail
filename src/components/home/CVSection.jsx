@@ -27,7 +27,7 @@ function CVSection() {
             <li>7. Inclure des sections supplémentaires si</li>
           </ul>
           <NavLink to="/comment-rédiger-cv">
-            <button className="mt-3 w-fit  bg-[#1b64ac] px-2 py-[5px] text-xs font-semibold  text-white sm:text-lg lg:px-4 lg:py-3 lg:text-xl xl:px-7  xl:py-4">
+            <button className="mt-7 inline-block w-fit  bg-[#1b64ac] px-2 py-[5px] text-xs font-semibold  text-white sm:text-lg lg:px-4 lg:py-3 lg:text-xl xl:px-5  ">
               Savoir Plus!
             </button>
           </NavLink>
