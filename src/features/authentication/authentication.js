@@ -61,7 +61,10 @@ export async function getUserWithUid(userUID) {
     .select('*')
     .eq('userUID', userUID);
 
-  if (error) console.log(error);
+  if (error) {
+    console.log(error);
+    throw error;
+  }
 
   return data;
 }
@@ -72,15 +75,29 @@ export async function updateAuthUser(email, password) {
     email: email,
     password: password,
     data: {
-      firstName: 'Ibrahim NOOH',
-      familyName: 'Strasborug',
-      nationality: 'LONDON',
-      email: 'syed94908@gmail.com',
+      firstName: 'Ajmal',
+      familyName: 'Nezami',
+      nationality: 'France',
+      email: 'zeb16208@gmail.com',
     },
   });
 
   if (error) {
     console.log(error);
+    throw error;
+  }
+  return data;
+}
+
+// Update user data
+export async function updateUserData(uid, newData) {
+  const { data, error } = await supabase
+    .from('users')
+    .update({ ...newData })
+    .eq('userUID', uid)
+    .select();
+  if (error) {
+    throw error;
   }
   return data;
 }

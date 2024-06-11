@@ -15,6 +15,7 @@ function Login() {
   const navigate = useNavigate();
 
   async function loginUser() {
+    // 1) User login ka
     const confirmation = await login(emailForm, passwordForm);
     if (confirmation.error) {
       console.log(confirmation.error.message);
@@ -24,9 +25,12 @@ function Login() {
         setShowMessage(false);
       }, 2000);
     }
+    // 2) Ka error na we no da user database ta owala
+    // 2.1) data roubasa
     const {
-      address,
       city,
+      streetNumber,
+      street,
       password,
       email,
       familyName,
@@ -37,9 +41,11 @@ function Login() {
       dateOfBirth,
     } = confirmation.user.user_metadata;
 
+    // 2.2) data joraka
     const userData = {
-      address,
       city,
+      streetNumber,
+      street,
       password,
       email,
       familyName,
@@ -50,37 +56,38 @@ function Login() {
       dateOfBirth,
       userUID: confirmation.user.id,
     };
-    console.log(confirmation);
+    // 2.3) confirm ka sa da kho already add nady
     const data = await getUserWithUid(confirmation.user.id);
-    console.log('getUserWithUid:', data);
-    const insertingUser = await insertUserData(userData);
-    if (insertingUser.error) {
-      throw new Error(insertingUser.error.message);
+    if (!data[0]?.id) {
+      // 2.4) ka na we add no add ye ka
+      const insertingUser = await insertUserData(userData);
+      if (insertingUser.error) {
+        throw new Error(insertingUser.error.message);
+      }
     }
-    console.log(insertingUser);
-    // getUserWithUid(data.user.id).then((userData) => {
-    if (confirmation.user.id) {
-      dispatch(
-        createUser(
-          confirmation.user.user_metadata.firstName,
-          confirmation.user.user_metadata.familyName,
-          confirmation.user.user_metadata.email,
-          confirmation.user.user_metadata.password,
-          confirmation.user.user_metadata.address,
-          confirmation.user.user_metadata.postalCode,
-          confirmation.user.user_metadata.city,
-          confirmation.user.user_metadata.nationality,
-          confirmation.user.user_metadata.phoneNumber,
-          confirmation.user.user_metadata.dateOfBirth,
-        ),
-      );
-      setType('success');
-      navigate('/settings');
-      setShowMessage(true);
-      setTimeout(() => {
-        setShowMessage(false);
-      }, 2000);
-    }
+    // 2.5) che add sho os wayechawa redux ta
+    dispatch(
+      createUser(
+        confirmation.user.user_metadata.firstName,
+        confirmation.user.user_metadata.familyName,
+        confirmation.user.user_metadata.email,
+        confirmation.user.user_metadata.password,
+        confirmation.user.user_metadata.postalCode,
+        confirmation.user.user_metadata.city,
+        confirmation.user.user_metadata.streetNumber,
+        confirmation.user.user_metadata.street,
+        confirmation.user.user_metadata.nationality,
+        confirmation.user.user_metadata.phoneNumber,
+        confirmation.user.user_metadata.dateOfBirth,
+        confirmation.user.id,
+      ),
+    );
+    setType('success');
+    navigate('/settings');
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000);
   }
   const user = useSelector((store) => store.user);
   return (

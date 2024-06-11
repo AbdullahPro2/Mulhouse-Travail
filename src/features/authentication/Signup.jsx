@@ -157,14 +157,24 @@ function Signup() {
               {...register('confirmPassword')}
             />
           </FormRow>
-          <FormRow label="Adresse">
-            <input
-              type="text"
-              id="address"
-              className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-              {...register('address')}
-            />
-          </FormRow>
+          <div className="flex gap-2">
+            <FormRow label="Numero de rue">
+              <input
+                type="number"
+                id="streetNumber"
+                className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+                {...register('streetNumber')}
+              />
+            </FormRow>
+            <FormRow label="Rue">
+              <input
+                type="text"
+                id="street"
+                className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+                {...register('street')}
+              />
+            </FormRow>
+          </div>
           <div className="flex gap-2">
             <FormRow label="Code Postal">
               <input

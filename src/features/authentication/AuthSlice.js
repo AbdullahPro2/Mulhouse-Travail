@@ -5,12 +5,14 @@ const initialState = {
   familyName: '',
   email: '',
   password: '',
-  address: '',
   postalCode: '',
   city: '',
+  streetNumber: '',
+  street: '',
   nationality: '',
   phoneNumber: '',
   dateOfBirth: '',
+  userUID: '',
 };
 
 const authSlice = createSlice({
@@ -23,12 +25,14 @@ const authSlice = createSlice({
         familyName,
         email,
         password,
-        address,
         postalCode,
         city,
+        streetNumber,
+        street,
         nationality,
         phoneNumber,
         dateOfBirth,
+        userUID,
       ) {
         return {
           payload: {
@@ -36,12 +40,14 @@ const authSlice = createSlice({
             familyName,
             email,
             password,
-            address,
             postalCode,
             city,
+            streetNumber,
+            street,
             nationality,
             phoneNumber,
             dateOfBirth,
+            userUID,
           },
         };
       },
@@ -50,12 +56,14 @@ const authSlice = createSlice({
         state.familyName = action.payload.familyName;
         state.email = action.payload.email;
         state.password = action.payload.password;
-        state.address = action.payload.address;
         state.postalCode = action.payload.postalCode;
         state.city = action.payload.city;
+        state.streetNumber = action.payload.streetNumber;
+        state.street = action.payload.street;
         state.nationality = action.payload.nationality;
         state.phoneNumber = action.payload.phoneNumber;
         state.dateOfBirth = action.payload.dateOfBirth;
+        state.userUID = action.payload.userUID;
       },
     },
     logOutUser(state, payload) {
@@ -63,12 +71,14 @@ const authSlice = createSlice({
       state.familyName = '';
       state.email = '';
       state.password = '';
-      state.address = '';
       state.postalCode = '';
       state.city = '';
+      state.streetNumber = '';
+      state.street = '';
       state.nationality = '';
       state.phoneNumber = '';
       state.dateOfBirth = '';
+      state.userUID = '';
     },
   },
 });

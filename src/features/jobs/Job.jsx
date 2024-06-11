@@ -20,7 +20,7 @@ function Job() {
 
   if (isLoading) return <Spinner />;
   return (
-    <div className=" my-4 rounded-lg bg-white shadow-2xl md:max-h-[1380px] lg:max-h-[1310px] xl:max-h-[1180px]">
+    <div className=" my-4 rounded-lg bg-white shadow-2xl md:max-h-[1380px] lg:max-h-[1330px] xl:max-h-[1270px]">
       <div className="border-b-2 p-5">
         <h2 className="text-3xl font-bold text-stone-800">
           {data[0].jobTitle}
