@@ -70,15 +70,12 @@ export async function getUserWithUid(userUID) {
 }
 
 // Update user
-export async function updateAuthUser(email, password) {
+export async function updateAuthUser(userData) {
   const { data, error } = await supabase.auth.updateUser({
-    email: email,
-    password: password,
+    // email: email,
+    // password: password,
     data: {
-      firstName: 'Ajmal',
-      familyName: 'Nezami',
-      nationality: 'France',
-      email: 'zeb16208@gmail.com',
+      ...userData,
     },
   });
 
