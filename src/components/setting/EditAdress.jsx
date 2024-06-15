@@ -11,7 +11,7 @@ import {
   updateUserData,
 } from '../../features/authentication/authentication';
 
-function EditPersonal({ setUpdatePersonal, refetch }) {
+function EditAdress({ setUpdateAddresse, refetch }) {
   const { register, control, handleSubmit } = useForm();
   const user = useSelector((store) => store.user);
   async function onSubmit(userData) {
@@ -48,7 +48,7 @@ function EditPersonal({ setUpdatePersonal, refetch }) {
 
       const newData = await updateUserData(user.userUID, userDataFinal);
       console.log('newData', newData);
-      setUpdatePersonal(false);
+      setUpdateAddresse(false);
       refetch();
     } catch (error) {
       console.error('Error updating user:', error);
@@ -61,64 +61,40 @@ function EditPersonal({ setUpdatePersonal, refetch }) {
         onSubmit={handleSubmit(onSubmit)}
         className='shadow-md" mb-4 rounded px-8 pb-8 pt-6'
       >
-        <div className=" flex gap-2">
-          <FormRow label="prénom">
-            <input
-              type="text"
-              id="firstName"
-              defaultValue={user.firstName}
-              className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-              {...register('firstName')}
-            />
-          </FormRow>
-          <FormRow label="Nom">
-            <input
-              defaultValue={user.familyName}
-              type="text"
-              id="familyName"
-              className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-              {...register('familyName')}
-            />
-          </FormRow>
-        </div>
-        <FormRow label="Date de naissance ">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Controller
-              name="dateOfBirth"
-              defaultValue={user.dateOfBirth}
-              control={control}
-              render={({ field: { onChange, value } }) => (
-                <DatePicker
-                  value={value ? dayjs(value, 'DD/MM/YYYY') : null}
-                  onChange={(newValue) => {
-                    const formattedDate = newValue
-                      ? dayjs(newValue).format('DD/MM/YYYY')
-                      : '';
-                    onChange(formattedDate);
-                  }}
-                  format="DD/MM/YYYY"
-                  className="focus:shadow-outline h-[38px] w-full appearance-none rounded bg-white px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-                />
-              )}
-            />
-          </LocalizationProvider>
-        </FormRow>
-        <FormRow label="Nationalité">
+        <FormRow label="Rue">
           <input
+            defaultValue={user.street}
             type="text"
-            id="nationality"
+            id="streetNumber"
             className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-            {...register('nationality')}
-            defaultValue={user.nationality}
+            {...register('streetNumber')}
           />
         </FormRow>
-        <FormRow label="Numéro de téléphone">
+        <FormRow label="Numero de rue">
           <input
-            type="tel"
-            id="phoneNumber"
+            defaultValue={user.streetNumber}
+            type="text"
+            id="street"
             className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
-            {...register('phoneNumber')}
-            defaultValue={user.phoneNumber}
+            {...register('street')}
+          />
+        </FormRow>
+        <FormRow label="Code Postal">
+          <input
+            defaultValue={user.postalCode}
+            type="tel"
+            id="postalCode"
+            className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+            {...register('postalCode')}
+          />
+        </FormRow>
+        <FormRow label="Ville">
+          <input
+            defaultValue={user.city}
+            type="text"
+            id="city"
+            className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+            {...register('city')}
           />
         </FormRow>
         <button
@@ -132,4 +108,4 @@ function EditPersonal({ setUpdatePersonal, refetch }) {
   );
 }
 
-export default EditPersonal;
+export default EditAdress;

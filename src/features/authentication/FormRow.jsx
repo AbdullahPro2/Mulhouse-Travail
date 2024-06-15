@@ -12,7 +12,9 @@ function FormRow({ label, error, children }) {
         </label>
       )}
       {children}
-      {error && <p>Error Component</p>}
+      {error && (
+        <p className="text-xs italic text-red-500">Ce champ est nécessaire</p>
+      )}
     </div>
   );
 }

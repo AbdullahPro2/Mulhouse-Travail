@@ -85,6 +85,19 @@ export async function updateAuthUser(userData) {
   }
   return data;
 }
+// Update user
+export async function updateAuthUserEmailPass(userData) {
+  const { data, error } = await supabase.auth.updateUser({
+    email: userData.email,
+    password: userData.password,
+  });
+
+  if (error) {
+    console.log(error);
+    throw error;
+  }
+  return data;
+}
 
 // Update user data
 export async function updateUserData(uid, newData) {

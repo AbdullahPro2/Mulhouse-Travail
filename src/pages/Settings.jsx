@@ -9,6 +9,8 @@ import { useQuery } from '@tanstack/react-query';
 import { createUser } from '../features/authentication/AuthSlice';
 import MessageTopup from '../layout/MessageTopup';
 import EditPersonal from '../components/setting/EditPersonal';
+import EditAdress from '../components/setting/EditAdress';
+import EditSecurity from '../components/setting/EditSecurity';
 
 function Settings() {
   const user = useSelector((store) => store.user);
@@ -16,6 +18,8 @@ function Settings() {
   const [showMessage, setShowMessage] = useState(false);
   const [type, setType] = useState('');
   const [updatePersonal, setUpdatePersonal] = useState(false);
+  const [updateAddresse, setUpdateAddresse] = useState(false);
+  const [updateSecurity, setUpdateSecurity] = useState(false);
 
   const {
     isLoading,
@@ -49,8 +53,14 @@ function Settings() {
   });
   // console.log('user: ', user);
 
-  async function handleUpdateUserPersonalInformation() {
+  function handleUpdateUserPersonalInformation() {
     setUpdatePersonal((prev) => !prev);
+  }
+  function handleUpdateUserAddresse() {
+    setUpdateAddresse((prev) => !prev);
+  }
+  function handleUpdateUserSecurity() {
+    setUpdateSecurity((prev) => !prev);
   }
 
   if (!user.userUID) return <NoUserMessage />;
@@ -65,8 +75,14 @@ function Settings() {
       {updatePersonal && (
         <EditPersonal setUpdatePersonal={setUpdatePersonal} refetch={refetch} />
       )}
+      {updateAddresse && (
+        <EditAdress setUpdateAddresse={setUpdateAddresse} refetch={refetch} />
+      )}
+      {updateSecurity && (
+        <EditSecurity setUpdateSecurity={setUpdateSecurity} refetch={refetch} />
+      )}
       <div
-        className={`overflow-hidden p-4 ${updatePersonal ? '  opacity-20 ' : ' '}`}
+        className={`overflow-hidden p-4 ${updatePersonal ? '  opacity-20 ' : ' '}  ${updateAddresse ? '  opacity-20 ' : ' '}`}
       >
         <PageHeading text="Mon Profil" />
 
@@ -109,6 +125,7 @@ function Settings() {
             <button
               className="flex items-center gap-2"
               aria-label="Edit Address"
+              onClick={handleUpdateUserAddresse}
             >
               Edit <img src={editIcon} className="w-4" alt="Edit icon" />
             </button>
@@ -128,6 +145,7 @@ function Settings() {
             <button
               className="flex items-center gap-2"
               aria-label="Edit Security"
+              onClick={handleUpdateUserSecurity}
             >
               Edit <img src={editIcon} className="w-4" alt="Edit icon" />
             </button>
