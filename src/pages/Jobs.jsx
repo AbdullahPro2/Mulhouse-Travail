@@ -4,10 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 import Spinner from '../layout/Spinner';
 import JobItem from '../features/jobs/JobItem';
 import PageHeading from '../layout/PageHeading';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+
 function Jobs() {
   const [selectedJob, setSelectedJob] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const location = useLocation();
+
   const {
     isLoading,
     data: jobs,
@@ -24,7 +27,13 @@ function Jobs() {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [window.innerWidth]);
+  }, []);
+
+  useEffect(() => {
+    if (!location.pathname.includes('/job/')) {
+      setSelectedJob(false);
+    }
+  }, [location.pathname]);
 
   if (isLoading) return <Spinner />;
 
@@ -33,29 +42,28 @@ function Jobs() {
       <PageHeading text="Offres D'emploi " />
       <div className="gap-10 md:flex md:justify-between">
         <div>
-          {(selectedJob && isMobile) === false
-            ? jobs.map((job) => (
-                <JobItem
-                  key={job.id}
-                  id={job.id}
-                  jobTitle={job.jobTitle}
-                  companyName={job.companyName}
-                  location={job.jobLocation}
-                  salary={job.jobSalary}
-                  workTime={job.jobWorkTime}
-                  description={job.jobDescription}
-                  candidateProfile={job.jobCandidateProfile}
-                  candidateQualities={job.jobCandidateQualities}
-                  contractType={job.jobContractType}
-                  companyDescription={job.companyDescription}
-                  strong={job.strong}
-                  created_at={job.created_at}
-                  onSetSelectedJob={setSelectedJob}
-                />
-              ))
-            : ' '}
+          {(!selectedJob || !isMobile) &&
+            jobs.map((job) => (
+              <JobItem
+                key={job.id}
+                id={job.id}
+                jobTitle={job.jobTitle}
+                companyName={job.companyName}
+                location={job.jobLocation}
+                salary={job.jobSalary}
+                workTime={job.jobWorkTime}
+                description={job.jobDescription}
+                candidateProfile={job.jobCandidateProfile}
+                candidateQualities={job.jobCandidateQualities}
+                contractType={job.jobContractType}
+                companyDescription={job.companyDescription}
+                strong={job.strong}
+                created_at={job.created_at}
+                onSetSelectedJob={setSelectedJob}
+              />
+            ))}
         </div>
-        <Outlet context={setSelectedJob} />
+        <Outlet context={[setSelectedJob]} />
       </div>
     </div>
   );
