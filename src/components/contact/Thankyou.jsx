@@ -10,8 +10,7 @@ function Thankyou() {
       </h1>
       <p className="mb-6 text-justify text-lg text-stone-700">
         Votre message a bien été reçu. Je vous répondrai dès que possible. En
-        attendant, n'hésitez pas à explorer davantage mon portfolio ou à me
-        suivre sur les réseaux sociaux pour des mises à jour.
+        attendant, n'hésitez pas à explorer notre site.
       </p>
       <div className="flex justify-center">
         <NavLink to="/" className="text-blue-500 hover:underline">

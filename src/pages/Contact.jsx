@@ -75,7 +75,7 @@ function Contact() {
             <input
               type="hidden"
               name="redirect"
-              value="http://localhost:5173/merci-pour-contactez"
+              value="/merci-pour-contactez"
             ></input>
             <button
               type="submit"
