@@ -5,6 +5,7 @@ import location from '../assets/contact/location.png';
 import ContactingItem from '../components/contact/ContactingItem';
 import FormRow from '../features/authentication/FormRow';
 import PageHeading from '../layout/PageHeading';
+
 function Contact() {
   return (
     <div>
@@ -41,7 +42,7 @@ function Contact() {
               type="hidden"
               name="access_key"
               value="a12de647-b2a1-4d15-8876-caf558070861"
-            ></input>
+            />
             <FormRow label="prénom">
               <input
                 name="prénom"
@@ -71,12 +72,11 @@ function Contact() {
                 required
               />
             </FormRow>
-            {/* Change it */}
             <input
               type="hidden"
               name="redirect"
-              value="merci-pour-contactez"
-            ></input>
+              value="https://mulhouse-travail.netlify.app/merci-pour-contactez"
+            />
             <button
               type="submit"
               className="send-message mt-4 w-full cursor-pointer rounded border-0 bg-[#1b64ac] px-4 py-2 text-center font-normal leading-loose text-teal-50 md:text-lg lg:mt-16"
