@@ -75,7 +75,7 @@ function Contact() {
             <input
               type="hidden"
               name="redirect"
-              value="https://mulhouse-travail.netlify.app/merci-pour-contactez"
+              value="https://mulhouse-travail.netlify.app/mercipourcontactez"
             />
             <button
               type="submit"

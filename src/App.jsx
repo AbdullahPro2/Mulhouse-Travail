@@ -76,7 +76,7 @@ function App() {
           element: <CV />,
         },
         {
-          path: '/merci-pour-contactez',
+          path: '/mercipourcontactez',
           element: <Thankyou />,
         },
       ],
