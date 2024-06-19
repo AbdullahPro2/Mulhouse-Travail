@@ -5,7 +5,6 @@ Mulhouse Travail is a job portal website where you can find your dream job in ju
 
 ## Features
 - **User-Friendly Interface:** Intuitive design for easy navigation.
-- **Advanced Search:** Filter jobs based on various criteria.
 - **Real-Time Updates:** Get the latest job postings as soon as they are available.
 - **User Profiles:** Create and manage your profile to attract potential employers.
 - **Responsive Design:** Accessible on all devices, from desktops to smartphones.
@@ -17,9 +16,9 @@ Mulhouse Travail is a job portal website where you can find your dream job in ju
 
 ## Installation
 1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/mulhouse-travail.git
-   
+```sh
+git clone https://github.com/yourusername/mulhouse-travail.git
+```
 2. Navigate to the project directory
  ```sh
 cd mulhouse-travail
