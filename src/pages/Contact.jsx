@@ -77,6 +77,7 @@ function Contact() {
               name="redirect"
               value="https://mulhouse-travail.netlify.app/mercipourcontactez"
             />
+
             <button
               type="submit"
               className="send-message mt-4 w-full cursor-pointer rounded border-0 bg-[#1b64ac] px-4 py-2 text-center font-normal leading-loose text-teal-50 md:text-lg lg:mt-16"
