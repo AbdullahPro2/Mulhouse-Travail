@@ -73,7 +73,7 @@ function RecentJobs() {
       <div className="mt-6 text-center">
         <NavLink
           to="/jobs"
-          className="mt-5 inline-block w-fit  bg-[#1b64ac] px-4 py-2  text-xs font-semibold  text-white sm:text-lg lg:px-6 lg:py-3 lg:text-xl xl:px-7 xl:py-4 "
+          className="mt-7 inline-block w-fit bg-[#1b64ac] px-4 py-2 font-semibold  text-white sm:text-lg lg:px-6 lg:py-3 lg:text-xl xl:px-7 xl:py-4 "
         >
           View All Jobs
         </NavLink>
