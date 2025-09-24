@@ -26,7 +26,7 @@ export async function signUpNewUser(email, password, userDetails) {
       password: password,
       options: {
         data: userDetails,
-        emailRedirectTo: 'http://localhost:5173/login',
+        emailRedirectTo: 'https://mulhouse-travail.netlify.app/login',
       },
     });
     if (error) {

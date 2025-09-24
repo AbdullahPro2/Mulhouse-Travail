@@ -108,7 +108,10 @@ function Settings() {
             />
             <SettingItem
               upperText="Age"
-              lowerText={2024 - user.dateOfBirth.split('/')[2]}
+              lowerText={
+                new Date().getFullYear() -
+                Number(user.dateOfBirth.split('/')[2])
+              }
             />
           </div>
           <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
