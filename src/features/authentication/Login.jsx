@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import FormRow from './FormRow';
 import { useDispatch, useSelector } from 'react-redux';
 import supabase from '../../services/supabase';
@@ -144,9 +144,9 @@ function Login() {
 
           <div className="mt-8 text-center">
             <p>Première fois? Créez votre compte.</p>
-            <a href="/signup" className="text-[#003262]">
-              S'inscrire
-            </a>
+            <NavLink to="/signup">
+              <h4 className="text-[#003262]">S'inscrire</h4>{' '}
+            </NavLink>
           </div>
         </form>
       </div>
