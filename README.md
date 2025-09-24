@@ -29,19 +29,5 @@ npm install
 ```
 4. Start the development server
 
-[Attan](https://github.com/user-attachments/files/17100536/Attan.pptx).
 ``` 
 npm start 
-
-
-
-
-
-
-
-
-
-
-
-
-
