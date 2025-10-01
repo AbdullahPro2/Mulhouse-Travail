@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import FormRow from './FormRow';
 import { useDispatch, useSelector } from 'react-redux';
 import supabase from '../../services/supabase';
 import { login, insertUserData, getUserWithUid } from './authentication';
 import { createUser } from './AuthSlice';
+import FormRow from './FormRow';
 import MessageTopup from '../../layout/MessageTopup';
 
 function Login() {
@@ -16,39 +16,50 @@ function Login() {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
 
-  // Handle magic link on page load
+  // ✅ Handle magic link login
   useEffect(() => {
     async function handleMagicLink() {
-      const { error, data } = await supabase.auth.setSessionFromUrl();
+      if (!window.location.hash.includes('access_token')) return;
+
+      const { data, error } = await supabase.auth.getSessionFromUrl({
+        storeSession: true,
+      });
+
       if (error) {
         console.error('Magic link error:', error.message);
+        setType(error.message);
+        setShowMessage(true);
+        setTimeout(() => setShowMessage(false), 4000);
         return;
       }
 
-      // Save user data in Redux if first-time login
-      const userData = data.user.user_metadata;
-      const dbData = await getUserWithUid(data.user.id);
+      const user = data.session?.user;
+      if (!user) return;
+
+      // Clear the URL hash
+      window.location.hash = '';
+
+      // Save user in DB if first login
+      const dbData = await getUserWithUid(user.id);
       if (!dbData[0]?.id) {
-        await insertUserData({
-          ...userData,
-          userUID: data.user.id,
-        });
+        await insertUserData({ ...user.user_metadata, userUID: user.id });
       }
 
+      // Save user in Redux
       dispatch(
         createUser(
-          userData.firstName,
-          userData.familyName,
-          userData.email,
-          userData.password || '',
-          userData.postalCode,
-          userData.city,
-          userData.streetNumber,
-          userData.street,
-          userData.nationality,
-          userData.phoneNumber,
-          userData.dateOfBirth,
-          data.user.id,
+          user.user_metadata.firstName,
+          user.user_metadata.familyName,
+          user.email,
+          '',
+          user.user_metadata.postalCode,
+          user.user_metadata.city,
+          user.user_metadata.streetNumber,
+          user.user_metadata.street,
+          user.user_metadata.nationality,
+          user.user_metadata.phoneNumber,
+          user.user_metadata.dateOfBirth,
+          user.id,
         ),
       );
 
@@ -56,21 +67,29 @@ function Login() {
       setShowMessage(true);
       setTimeout(() => setShowMessage(false), 2000);
 
-      navigate('/settings', { replace: true }); // Redirect to clean URL
+      navigate('/settings', { replace: true });
     }
 
     handleMagicLink();
   }, [dispatch, navigate]);
 
-  // Handle normal login
-  async function loginUser(e) {
+  // ✅ Handle normal email/password login
+  const loginUser = async (e) => {
     e.preventDefault();
 
+    if (!emailForm || !passwordForm) {
+      setType('Veuillez remplir tous les champs');
+      setShowMessage(true);
+      setTimeout(() => setShowMessage(false), 2000);
+      return;
+    }
+
     const confirmation = await login(emailForm, passwordForm);
+
     if (confirmation.error) {
       setType(confirmation.error.message);
       setShowMessage(true);
-      setTimeout(() => setShowMessage(false), 2000);
+      setTimeout(() => setShowMessage(false), 3000);
       return;
     }
 
@@ -101,13 +120,17 @@ function Login() {
     setShowMessage(true);
     setTimeout(() => setShowMessage(false), 2000);
     navigate('/settings');
-  }
+  };
 
   return (
     <>
       {showMessage && (
         <MessageTopup
-          message={`${user.firstName || 'Utilisateur'} connecté avec succès`}
+          message={
+            type === 'success'
+              ? `${user.firstName || 'Utilisateur'} connecté avec succès`
+              : type
+          }
           type={type}
         />
       )}
@@ -145,7 +168,7 @@ function Login() {
           <div className="mt-8 text-center">
             <p>Première fois? Créez votre compte.</p>
             <NavLink to="/signup">
-              <h4 className="text-[#003262]">S'inscrire</h4>{' '}
+              <h4 className="text-[#003262]">S'inscrire</h4>
             </NavLink>
           </div>
         </form>

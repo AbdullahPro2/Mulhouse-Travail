@@ -22,23 +22,19 @@ export async function login(email, password) {
 export async function signUpNewUser(email, password, userDetails) {
   try {
     let { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
+      email,
+      password,
       options: {
-        data: userDetails,
-        emailRedirectTo: 'https://mulhouse-travail.netlify.app/login',
+        data: userDetails, // user metadata
       },
     });
-    if (error) {
-      throw error; // Throw the error to be caught in the catch block
-    }
+    if (error) throw error;
     return data;
   } catch (error) {
     console.error('Error during sign-up:', error);
     return { error };
   }
 }
-
 // ADD USER DATA
 
 export async function insertUserData(userData) {
