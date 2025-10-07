@@ -12,6 +12,8 @@ Réalisé dans le but de pratiquer et mettre en œuvre mes compétences en React
 - **Gestion d’état :** React Query, Redux avancé
 - **Backend :** Supabase
 
+**Projet en ligne:** [Mulhouse Travail](https://ton-lien.vercel.app)
+
 ## Installation
 1. Clone the repository:
 ```sh
