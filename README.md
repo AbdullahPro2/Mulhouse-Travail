@@ -4,8 +4,7 @@
 <img width="1286" height="618" alt="Capture d’écran du 2025-10-07 14-20-41" src="https://github.com/user-attachments/assets/bf299402-bf88-4b81-bc16-52e7e27e520a" />
 
 
-
-Mulhouse Travail is a job portal website where you can find your dream job in just a few clicks. Its flexibility, adaptability, and easy-to-use UX enable every user, even those without an IT background, to use it easily. The enhanced UI supports our goal of making your job search easy and efficient. This is Mulhouse Travail—let's find your dream job together.
+Mulhouse Travail est un site portail dédié à l’emploi, où vous pouvez trouver votre travail de rêve en quelques clics seulement. Sa flexibilité, son adaptabilité et son UX facile à utiliser permettent à chaque utilisateur, même sans connaissances en informatique, de l’utiliser facilement. L’interface améliorée soutient notre objectif : rendre votre recherche d’emploi simple et efficace.
 
 ## Features
 - **User-Friendly Interface:** Intuitive design for easy navigation.
