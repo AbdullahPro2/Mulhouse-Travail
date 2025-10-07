@@ -2,7 +2,10 @@
 
 <img width="1286" height="618" alt="Capture d’écran du 2025-10-07 14-20-41" src="https://github.com/user-attachments/assets/bf299402-bf88-4b81-bc16-52e7e27e520a" />
 
-Mulhouse Travail est un site portail dédié à l’emploi, où vous pouvez trouver votre travail de rêve en quelques clics seulement. Sa flexibilité, son adaptabilité et son UX facile à utiliser permettent à chaque utilisateur, même sans connaissances en informatique, de l’utiliser facilement. L’interface améliorée soutient notre objectif : rendre votre recherche d’emploi simple et efficace.
+
+
+Mulhouse Travail est un portail d’emploi que j’ai entièrement conçu et développé (UI, UX et code).
+Réalisé dans le but de pratiquer et mettre en œuvre mes compétences en React avancé, ce projet offre une interface simple, moderne et efficace pour la recherche d’emploi.
 
 ## Technologies utilisées
 - **Frontend :** HTML / CSS / JavaScript, ReactJs, TailwindCss, React Router Dom V6, React Form Hook
