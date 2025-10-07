@@ -1,7 +1,8 @@
 # WELCOME TO [MULHOUSE TRAVAIL](https://mulhouse-travail.netlify.app/)
 
 
-<img width="1300" height="3247" alt="Mulhouse-Travail" src="https://github.com/user-attachments/assets/d1cc03a4-1d57-406d-a9fc-181f4a1fd35c" />
+<img width="1286" height="618" alt="Capture d’écran du 2025-10-07 14-20-41" src="https://github.com/user-attachments/assets/bf299402-bf88-4b81-bc16-52e7e27e520a" />
+
 
 
 Mulhouse Travail is a job portal website where you can find your dream job in just a few clicks. Its flexibility, adaptability, and easy-to-use UX enable every user, even those without an IT background, to use it easily. The enhanced UI supports our goal of making your job search easy and efficient. This is Mulhouse Travail—let's find your dream job together.
