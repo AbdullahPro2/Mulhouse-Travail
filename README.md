@@ -30,5 +30,9 @@ npm start
 ## Fonctionnalités
 - **Interface intuitive :** Un design pensé pour une navigation facile.
 - **Mises à jour en temps réel :** Recevez les dernières offres d’emploi dès qu’elles sont disponibles.
-- **Profils utilisateurs :** Créez et gérez votre profil pour attirer les employeurs potentiels.
+- **Profils utilisateurs :** Créez et gérez votre profil.
 - **Design responsive :** Accessible sur tous les appareils, des ordinateurs de bureau aux smartphones.
+- **Portail employeurs :** Les entreprises peuvent publier et gérer facilement leurs offres d’emploi.
+  
+## Ressources et Aide
+- 📰 **Blog conseils :** Une page dédiée pour apprendre à créer un CV professionnel facilement.
