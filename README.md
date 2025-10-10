@@ -1,4 +1,6 @@
-# WELCOME TO [MULHOUSE TRAVAIL](https://mulhouse-travail.netlify.app/)
+# BIENVENUE SUR [MULHOUSE TRAVAIL](https://mulhouse-travail.netlify.app/)
+
+Bienvenue sur l'application Mulhouse Travail ! Ici, vous trouverez toutes sortes d'offres d'emploi disponibles pour vous à Mulhouse. Développée avec ReactJS et Tailwind, construite avec Vite.
 
 <img width="1286" height="618" alt="Capture d’écran du 2025-10-07 14-20-41" src="https://github.com/user-attachments/assets/bf299402-bf88-4b81-bc16-52e7e27e520a" />
 
